@@ -87,6 +87,45 @@
   .draft-aperture { position: absolute; top: 38%; left: 42%; width: 28%; aspect-ratio: 1; border-radius: 999px; border: 1px solid #121416; background: #e9e4d9; }
   .draft-line { position: absolute; top: 52%; left: 14%; width: 72%; height: 1px; background: #121416; transform: rotate(-15deg); transform-origin: left; }
   .contact-plate { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.035) calc(100% - 1px)); background-size: 160px 100%; }
+  .investor-grid { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.08) calc(100% - 1px)), linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.055) calc(100% - 1px)); background-size: 96px 96px; mask-image: linear-gradient(to bottom, black, transparent 92%); }
+  .forum-kicker { @apply flex items-center gap-2 font-mono text-[10px] font-medium tracking-[0.14em] text-[#1748e8]; }
+  .forum-back-link { @apply inline-flex items-center gap-2 font-mono text-[10px] font-medium tracking-[0.1em] text-[#121416] transition-transform duration-200 hover:translate-x-1; }
+  .forum-index-link { @apply flex items-center gap-4 border-b border-[#121416]/15 py-3 font-mono text-[11px] text-[#121416]/78 transition-colors hover:text-[#1748e8]; }
+  .forum-index-link span { @apply text-[9px] text-[#1748e8]; }
+  .forum-thread { scroll-margin-top: 95px; }
+  .forum-post { @apply grid gap-7 border-t border-[#121416]/15 py-8 md:grid-cols-[150px_minmax(0,1fr)] md:gap-10 md:py-11; }
+  .forum-author { @apply flex gap-3 font-mono text-[9px] tracking-[0.09em]; }
+  .forum-author > div > p { @apply text-[#121416]/75; }
+  .forum-author > div > span { @apply mt-1 block leading-4 text-[#121416]/42; }
+  .author-dot { @apply mt-0.5 h-2 w-2 rounded-full; }
+  .post-title { @apply max-w-3xl font-display text-[clamp(1.85rem,3.3vw,3.6rem)] font-semibold leading-[1.02] tracking-[-0.065em]; }
+  .post-copy { @apply mt-6 max-w-3xl text-[14px] leading-8 text-[#121416]/72; }
+  .post-copy strong { @apply font-semibold text-[#121416]; }
+  .forum-post blockquote { @apply mt-8 border-l-2 border-[#1748e8] pl-5 font-display text-2xl font-semibold tracking-[-0.04em]; }
+  .division-list { @apply mt-9 grid border border-[#121416]/15 md:grid-cols-3; }
+  .division-card { @apply min-h-[255px] border-b border-[#121416]/15 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0; }
+  .division-card > div { @apply flex items-center justify-between; }
+  .division-card span { @apply font-mono text-[10px] tracking-[0.1em] text-[#1748e8]; }
+  .division-card > div p { @apply font-mono text-[9px] text-[#121416]/45; }
+  .division-card h3 { @apply mt-12 font-display text-2xl font-semibold tracking-[-0.05em]; }
+  .division-card > p { @apply mt-3 text-[12px] leading-6 text-[#121416]/66; }
+  .metric-board { @apply mt-9 grid divide-y divide-[#121416]/15 border border-[#121416]/15 md:grid-cols-3 md:divide-x md:divide-y-0; }
+  .metric-board > div { @apply min-h-[240px] p-5; }
+  .metric-board svg { @apply text-[#1748e8]; }
+  .metric-board span { @apply mt-7 block font-mono text-[9px] tracking-[0.09em] text-[#121416]/48; }
+  .metric-board strong { @apply mt-2 block font-display text-[clamp(1.75rem,3vw,2.7rem)] font-semibold tracking-[-0.06em]; }
+  .metric-board strong em { @apply font-mono text-xs not-italic tracking-normal text-[#121416]/55; }
+  .metric-board p { @apply mt-4 text-[11px] leading-5 text-[#121416]/64; }
+  .roadmap-list { @apply mt-9 divide-y divide-[#121416]/15 border-t border-[#121416]/15; }
+  .roadmap-list li { @apply grid gap-4 py-6 sm:grid-cols-[130px_170px_minmax(0,1fr)] sm:items-start; }
+  .roadmap-list li > div { @apply flex justify-between sm:block; }
+  .roadmap-list span { @apply font-mono text-[10px] tracking-[0.1em] text-[#1748e8]; }
+  .roadmap-list time { @apply mt-1 block font-mono text-[10px] text-[#121416]/48; }
+  .roadmap-list h3 { @apply font-display text-2xl font-semibold tracking-[-0.045em]; }
+  .roadmap-list p { @apply text-[12px] leading-6 text-[#121416]/68; }
+  .disclosure-note { @apply mt-9 border border-[#1748e8]/50 bg-[#1748e8]/[0.045] p-5; }
+  .disclosure-note span { @apply font-mono text-[9px] tracking-[0.1em] text-[#1748e8]; }
+  .disclosure-note p { @apply mt-3 max-w-3xl text-[12px] leading-7 text-[#121416]/74; }
 }
 
 @media (prefers-reduced-motion: reduce) {

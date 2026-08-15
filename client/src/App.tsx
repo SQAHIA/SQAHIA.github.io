@@ -6,11 +6,13 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import RoadToCorporation from "./pages/RoadToCorporation";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/road-to-incorporation" component={RoadToCorporation} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
@@ -28,4 +30,3 @@ function App() {
 }
 
 export default App;
-
