@@ -1,6 +1,6 @@
 /**
  * SQAHIA Digital / Corporate Page System
- * Calibrated Quiet extends into a transparent corporate-information system: current facts, future plans, and preparing content stay visibly distinct.
+ * Directional Spectrum brings the official blue-to-cyan logo into a transparent information system without blurring current facts, future plans, and preparing content.
  */
 import {
   ArrowLeft,
@@ -199,9 +199,9 @@ export default function CorporatePage() {
 
   return (
     <div className="min-h-screen bg-[#f6f3ec] text-[#121416] selection:bg-[#1748e8] selection:text-white">
-      <header className="sticky top-0 z-50 border-b border-[#121416]/12 bg-[#f6f3ec]/95 backdrop-blur-md">
+      <header className="corporate-header sticky top-0 z-50 border-b border-[#121416]/12 bg-[#f6f3ec]/95 backdrop-blur-md">
         <div className="mx-auto flex h-[72px] max-w-[1520px] items-center justify-between px-5 sm:px-8 lg:px-10">
-          <a href="/" className="flex items-center gap-3" aria-label="SQAHIA Digitalホームへ"><img src="/manus-storage/sqahia-mark_d9e346c3.png" alt="" className="h-9 w-9 object-contain" /><span className="font-display text-[14px] font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-[#121416]/50">DIGITAL</span></span></a>
+          <a href="/" className="flex items-center gap-3" aria-label="SQAHIA Digitalホームへ"><img src="/manus-storage/sqahia-logo-official_8e289d78.png" alt="" className="official-logo h-10 w-10 object-contain" /><span className="brand-lockup font-display text-[14px] font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-[#121416]/50">DIGITAL</span></span></a>
           <nav className="hidden items-center gap-4 xl:gap-5 lg:flex" aria-label="グローバルナビゲーション">{topLinks.map(([label, href]) => <a key={label} href={href} className="corporate-nav-link">{label}</a>)}<a href="/contact" className="corporate-contact-link">CONTACT <ArrowUpRight size={12} /></a></nav>
           <button type="button" onClick={() => setMenuOpen((open) => !open)} className="grid h-10 w-10 place-items-center border border-[#121416]/15 lg:hidden" aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}>{menuOpen ? <X size={19} /> : <Menu size={19} />}</button>
         </div>
@@ -211,6 +211,7 @@ export default function CorporatePage() {
       <main>
         <section className="corporate-hero relative overflow-hidden border-b border-[#121416]/15">
           <div className="corporate-hero-grid absolute inset-0" aria-hidden="true" />
+          <div className="corporate-sigil" aria-hidden="true"><span /><i /><b /></div>
           <div className="relative mx-auto grid max-w-[1520px] gap-9 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
             <div className="lg:col-span-3"><p className="section-kicker"><span>{page.code}</span>{page.section}</p></div>
             <div className="lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.13em] text-[#121416]/50">{page.trail}</p><h1 className="mt-5 whitespace-pre-line font-display text-[clamp(3.15rem,7vw,7.8rem)] font-bold leading-[0.86] tracking-[-0.08em]">{page.title}</h1><div className="mt-10 grid gap-6 border-t border-[#121416]/18 pt-5 md:grid-cols-[1fr_auto] md:items-end"><p className="max-w-2xl text-[15px] leading-8 text-[#121416]/75">{page.lead}</p><StatusBadge status={page.status} /></div></div>
@@ -235,7 +236,7 @@ export default function CorporatePage() {
         </section>
       </main>
 
-      <footer className="border-t border-[#121416]/15 bg-[#121416] px-5 py-7 text-white/60 sm:px-8 lg:px-10"><div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3 text-white"><img src="/manus-storage/sqahia-mark_d9e346c3.png" alt="" className="h-8 w-8" /><p className="font-display text-sm font-bold tracking-[-0.05em]">SQAHIA DIGITAL</p></div><p className="mt-3 font-mono text-[9px] tracking-[0.09em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p></div><div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] tracking-[0.08em]"><a href="/about">ABOUT</a><a href="/business">BUSINESS</a><a href="/products">PRODUCTS</a><a href="/technology">TECHNOLOGY</a><a href="/road-to-incorporation">INVESTOR FORUM</a><a href="/contact">CONTACT</a></div></div></footer>
+      <footer className="border-t border-[#121416]/15 bg-[#121416] px-5 py-7 text-white/60 sm:px-8 lg:px-10"><div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3 text-white"><img src="/manus-storage/sqahia-logo-official_8e289d78.png" alt="" className="official-logo h-9 w-9" /><p className="brand-lockup font-display text-sm font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-white/55">DIGITAL</span></p></div><p className="mt-3 font-mono text-[9px] tracking-[0.09em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p></div><div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] tracking-[0.08em]"><a href="/about">ABOUT</a><a href="/business">BUSINESS</a><a href="/products">PRODUCTS</a><a href="/technology">TECHNOLOGY</a><a href="/road-to-incorporation">INVESTOR FORUM</a><a href="/contact">CONTACT</a></div></div></footer>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 /*
- * SQAHIA Digital / Calibrated Quiet
- * The global system uses a warm paper field, ink black type, and calibrated SQAHIA Cobalt signals.
+ * SQAHIA Digital / Directional Spectrum
+ * The official logo's blue-to-cyan spectrum and forward white slash activate the editorial system through directional gradients and precise light.
  */
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
@@ -44,7 +44,7 @@
   --card-foreground: oklch(0.16 0.01 260);
   --popover: oklch(0.98 0.006 85);
   --popover-foreground: oklch(0.16 0.01 260);
-  --primary: oklch(0.47 0.23 267);
+  --primary: oklch(0.63 0.18 223);
   --primary-foreground: oklch(0.99 0.002 90);
   --secondary: oklch(0.91 0.014 85);
   --secondary-foreground: oklch(0.16 0.01 260);
@@ -56,7 +56,7 @@
   --destructive-foreground: oklch(0.99 0.002 90);
   --border: oklch(0.76 0.013 85);
   --input: oklch(0.76 0.013 85);
-  --ring: oklch(0.47 0.23 267);
+  --ring: oklch(0.63 0.18 223);
   --radius: 0px;
 }
 
@@ -77,7 +77,17 @@
   .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
   .action-link { transition: color 180ms cubic-bezier(0.23, 1, 0.32, 1), background-color 180ms cubic-bezier(0.23, 1, 0.32, 1), border-color 180ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1); }
   .action-link:active { transform: scale(0.97); }
+  .action-link, .corporate-contact-link { position: relative; overflow: hidden; background: linear-gradient(120deg, #152fc1 0%, #147be2 54%, #24d6dc 100%); box-shadow: 0 8px 22px rgb(20 112 223 / 0.18); }
+  .action-link::after, .corporate-contact-link::after { content: ""; position: absolute; right: -18%; top: 0; height: 100%; width: 34%; background: rgb(255 255 255 / 0.19); transform: skewX(-30deg); transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .action-link:hover::after, .corporate-contact-link:hover::after { transform: translateX(-210%) skewX(-30deg); }
+  .action-link > *, .corporate-contact-link > * { position: relative; z-index: 1; }
   .bg-grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E"); background-size: 150px 150px; }
+  .official-logo { border-radius: 10px; box-shadow: 0 5px 14px rgb(26 128 220 / 0.16); }
+  .brand-lockup { position: relative; display: inline-flex; align-items: baseline; gap: 0.26rem; letter-spacing: -0.055em; }
+  .brand-lockup::after { content: ""; display: inline-block; width: 16px; height: 1px; margin-left: 0.1rem; background: linear-gradient(90deg, #1730bd, #22d7dc); transform: skewX(-32deg); }
+  .site-header::before, .corporate-header::before, .investor-header::before { content: ""; position: absolute; inset: 0 0 auto; z-index: 2; height: 2px; background: linear-gradient(90deg, #1730bd 0%, #167ae5 54%, #22d7dc 100%); }
+  .home-hero::before { content: ""; position: absolute; right: -13%; top: 0; z-index: 1; width: 48%; height: 100%; background: linear-gradient(135deg, transparent 28%, rgb(26 120 231 / 0.08) 28%, rgb(36 214 220 / 0.14) 58%, transparent 58%); pointer-events: none; }
+  .directional-ray { z-index: 2; pointer-events: none; opacity: 0.46; background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.68), transparent); filter: blur(0.2px); }
   .technical-plate { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(255 255 255 / 0.035) calc(100% - 1px)), linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), rgb(255 255 255 / 0.025) calc(100% - 1px)); background-size: 132px 132px; }
   .draft-field { background: linear-gradient(135deg, rgb(255 255 255 / 0.9), rgb(233 228 217 / 0.7)); }
   .draft-field::before, .draft-field::after { content: ""; position: absolute; background: rgb(18 20 22 / 0.16); }
@@ -126,13 +136,23 @@
   .disclosure-note { @apply mt-9 border border-[#1748e8]/50 bg-[#1748e8]/[0.045] p-5; }
   .disclosure-note span { @apply font-mono text-[9px] tracking-[0.1em] text-[#1748e8]; }
   .disclosure-note p { @apply mt-3 max-w-3xl text-[12px] leading-7 text-[#121416]/74; }
-  .corporate-hero { background: linear-gradient(110deg, #f6f3ec 0%, #f6f3ec 65%, #e9e4d9 100%); }
+  .corporate-hero { background: linear-gradient(110deg, #f6f3ec 0%, #f6f3ec 61%, #e5eef6 100%); }
+  .corporate-hero::after { content: ""; position: absolute; right: -11%; top: 8%; z-index: 0; width: 54%; height: 80%; background: linear-gradient(135deg, transparent 28%, rgb(20 123 226 / 0.07) 28%, rgb(36 214 220 / 0.1) 58%, transparent 58%); transform: skewX(-10deg); pointer-events: none; }
+  .corporate-sigil, .forum-sigil { position: absolute; z-index: 1; pointer-events: none; width: 280px; height: 280px; opacity: 0.7; }
+  .corporate-sigil { right: 9%; top: 18%; }
+  .forum-sigil { right: 11%; top: 13%; width: 220px; height: 220px; }
+  .corporate-sigil span, .forum-sigil span { position: absolute; inset: 18% 18%; border: 1px solid rgb(18 20 22 / 0.21); transform: rotate(45deg); }
+  .corporate-sigil i, .forum-sigil i { position: absolute; left: 37%; top: 37%; width: 29%; aspect-ratio: 1; border: 1px solid rgb(18 20 22 / 0.32); border-radius: 999px; background: rgb(246 243 236 / 0.5); }
+  .corporate-sigil b, .forum-sigil b { position: absolute; left: 5%; top: 52%; width: 92%; height: 1px; background: linear-gradient(90deg, transparent, rgb(23 48 189 / 0.6), rgb(34 215 220 / 0.56), transparent); transform: rotate(-34deg); }
+  .investor-pause { position: relative; overflow: hidden; background: linear-gradient(90deg, #eeece7, #e9f3f2); }
+  .investor-pause::after { content: ""; position: absolute; right: 15%; top: -28px; width: 190px; height: 150px; border: 1px solid rgb(18 20 22 / 0.15); transform: rotate(45deg); }
+  .investor-reference-line { display: block; position: relative; width: 100%; height: 1px; margin-top: 1.45rem; background: linear-gradient(90deg, #1730bd, #22d7dc, transparent); }
   .corporate-hero-grid { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.07) calc(100% - 1px)), linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.05) calc(100% - 1px)); background-size: 112px 112px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
   .corporate-nav-link { @apply font-mono text-[9px] tracking-[0.08em] text-[#121416]/68 transition-colors hover:text-[#1748e8]; }
-  .corporate-contact-link { @apply inline-flex items-center gap-1.5 bg-[#1748e8] px-3 py-2.5 font-mono text-[9px] tracking-[0.09em] text-white transition-colors hover:bg-[#121416]; }
+  .corporate-contact-link { @apply inline-flex items-center gap-1.5 px-3 py-2.5 font-mono text-[9px] tracking-[0.09em] text-white transition-transform hover:scale-[1.02]; }
   .status-badge { @apply inline-flex w-fit border px-2 py-1 font-mono text-[8px] font-medium tracking-[0.09em]; }
   .status-current { @apply border-[#121416]/25 bg-[#121416] text-white; }
-  .status-future { @apply border-[#1748e8]/45 bg-[#1748e8]/[0.08] text-[#1748e8]; }
+  .status-future { @apply border-[#168ee4]/45 bg-[#168ee4]/[0.08] text-[#147be2]; }
   .status-preparing { @apply border-[#121416]/20 bg-transparent text-[#121416]/57; }
   .status-compact { @apply hidden sm:inline-flex; }
   .subpage-link { @apply grid gap-4 py-6 sm:grid-cols-[42px_minmax(0,1fr)_auto] sm:items-center; }

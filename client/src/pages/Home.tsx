@@ -1,6 +1,6 @@
 /**
- * SQAHIA Digital / Calibrated Quiet
- * Japanese modernist editorial layout: warm paper, ink typography, calibrated cobalt signals.
+ * SQAHIA Digital / Directional Spectrum
+ * The official blue-to-cyan logo informs a forward-moving, luminous UI layered over the editorial information system.
  */
 import { motion } from "framer-motion";
 import {
@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-clip bg-[#f6f3ec] text-[#121416] selection:bg-[#1748e8] selection:text-white">
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        className={`site-header fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
             ? "border-b border-[#121416]/10 bg-[#f6f3ec]/94 shadow-[0_8px_26px_rgba(18,20,22,0.05)] backdrop-blur-md"
             : "bg-transparent"
@@ -81,11 +81,11 @@ export default function Home() {
         <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12">
           <a href="#top" className="group flex items-center gap-3" aria-label="SQAHIA Digital トップへ">
             <img
-              src="/manus-storage/sqahia-mark_d9e346c3.png"
+              src="/manus-storage/sqahia-logo-official_8e289d78.png"
               alt=""
-              className="h-9 w-9 object-contain transition-transform duration-300 group-hover:rotate-[-8deg]"
+              className="official-logo h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="leading-none">
+            <div className="brand-lockup leading-none">
               <span className="block font-display text-[15px] font-bold tracking-[-0.05em]">SQAHIA</span>
               <span className="mt-1 block font-mono text-[8px] font-medium tracking-[0.2em] text-[#121416]/55">DIGITAL</span>
             </div>
@@ -128,11 +128,12 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="relative min-h-[760px] overflow-hidden pt-[72px] lg:min-h-[800px]">
+        <section className="home-hero relative min-h-[760px] overflow-hidden pt-[72px] lg:min-h-[800px]">
           <div className="absolute inset-0 bg-[url('/manus-storage/sqahia-hero_f993646d.jpg')] bg-cover bg-[center_right]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f6f3ec] via-[#f6f3ec]/92 to-[#f6f3ec]/10" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f6f3ec] to-transparent" />
           <div className="absolute inset-0 bg-grain opacity-[0.15]" />
+          <div className="directional-ray absolute -right-[12%] top-[11%] h-[14%] w-[62%] rotate-[-42deg]" aria-hidden="true" />
 
           <div className="relative mx-auto flex min-h-[688px] max-w-[1440px] flex-col justify-end px-5 pb-12 sm:px-8 sm:pb-16 lg:min-h-[728px] lg:px-12 lg:pb-20">
             <motion.div initial="hidden" animate="visible" variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }} className="max-w-[850px]">

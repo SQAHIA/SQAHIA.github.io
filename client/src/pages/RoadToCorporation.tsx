@@ -1,6 +1,6 @@
 /**
  * SQAHIA Digital / Road to Incorporation
- * A read-only investor forum presented as an editorial planning record; facts and future plans are visibly separated.
+ * A transparent planning record, updated for the official Directional Spectrum logo system.
  */
 import { motion } from "framer-motion";
 import {
@@ -41,18 +41,18 @@ const growth = [
 ];
 
 function Mark() {
-  return <img src="/manus-storage/sqahia-mark_d9e346c3.png" alt="" className="h-9 w-9 object-contain" />;
+  return <img src="/manus-storage/sqahia-logo-official_8e289d78.png" alt="" className="official-logo h-10 w-10 object-contain" />;
 }
 
 export default function RoadToCorporation() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#eeece7] text-[#121416] selection:bg-[#1748e8] selection:text-white">
-      <header className="sticky top-0 z-50 border-b border-[#121416]/15 bg-[#eeece7]/95 backdrop-blur-md">
+      <header className="investor-header sticky top-0 z-50 border-b border-[#121416]/15 bg-[#eeece7]/95 backdrop-blur-md">
         <div className="mx-auto flex h-[72px] max-w-[1520px] items-center justify-between px-5 sm:px-8 lg:px-10">
           <a href="/" className="group flex items-center gap-3" aria-label="SQAHIA Digital公式サイトへ">
             <Mark />
-            <span className="font-display text-[14px] font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-[#121416]/50">DIGITAL</span></span>
+            <span className="brand-lockup font-display text-[14px] font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-[#121416]/50">DIGITAL</span></span>
           </a>
           <div className="hidden items-center gap-6 lg:flex">
             <span className="font-mono text-[10px] tracking-[0.12em] text-[#121416]/45">INVESTOR FORUM / READ ONLY</span>
@@ -66,6 +66,7 @@ export default function RoadToCorporation() {
       <main>
         <section id="overview" className="relative overflow-hidden border-b border-[#121416]/15">
           <div className="investor-grid absolute inset-0 opacity-60" aria-hidden="true" />
+          <div className="forum-sigil" aria-hidden="true"><span /><i /><b /></div>
           <div className="relative mx-auto grid max-w-[1520px] gap-10 px-5 py-16 sm:px-8 sm:py-24 lg:grid-cols-12 lg:px-10 lg:py-28">
             <div className="lg:col-span-3"><p className="forum-kicker"><CircleDot size={11} fill="currentColor" /> CAP TABLE IN PROGRESS</p></div>
             <div className="lg:col-span-8 lg:col-start-5">
@@ -79,6 +80,8 @@ export default function RoadToCorporation() {
           </div>
           <div className="relative mx-auto max-w-[1520px] border-t border-[#121416]/15 px-5 sm:px-8 lg:px-10"><div className="grid grid-cols-2 divide-x divide-[#121416]/15 sm:grid-cols-4"><Stat label="COMPANY" value="SQAHIA Digital" /><Stat label="LEGAL STATUS" value="Individual business" /><Stat label="PLAN VERSION" value="01 / 2026.08" /><Stat label="ACCESS" value="Public record" /></div></div>
         </section>
+
+        <section className="investor-pause border-b border-[#121416]/15"><div className="mx-auto grid max-w-[1520px] gap-5 px-5 py-9 sm:px-8 lg:grid-cols-12 lg:px-10"><div className="lg:col-span-3"><p className="font-mono text-[9px] tracking-[0.12em] text-[#147be2]">PLANNED MILESTONE</p></div><div className="lg:col-span-8 lg:col-start-5"><p className="max-w-md font-display text-[clamp(1.7rem,3.4vw,3.4rem)] font-semibold leading-[0.95] tracking-[-0.065em]">2028.12.25<span className="ml-3 align-middle font-mono text-[10px] font-normal tracking-[0.11em] text-[#121416]/55">INCORPORATION / PLANNED</span></p><span className="investor-reference-line" /></div></div></section>
 
         <div className="mx-auto grid max-w-[1520px] lg:grid-cols-[260px_minmax(0,1fr)]">
           <aside className="hidden border-r border-[#121416]/15 px-10 py-12 lg:block">
