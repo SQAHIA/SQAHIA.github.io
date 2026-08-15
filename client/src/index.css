@@ -126,6 +126,18 @@
   .disclosure-note { @apply mt-9 border border-[#1748e8]/50 bg-[#1748e8]/[0.045] p-5; }
   .disclosure-note span { @apply font-mono text-[9px] tracking-[0.1em] text-[#1748e8]; }
   .disclosure-note p { @apply mt-3 max-w-3xl text-[12px] leading-7 text-[#121416]/74; }
+  .corporate-hero { background: linear-gradient(110deg, #f6f3ec 0%, #f6f3ec 65%, #e9e4d9 100%); }
+  .corporate-hero-grid { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.07) calc(100% - 1px)), linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.05) calc(100% - 1px)); background-size: 112px 112px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+  .corporate-nav-link { @apply font-mono text-[9px] tracking-[0.08em] text-[#121416]/68 transition-colors hover:text-[#1748e8]; }
+  .corporate-contact-link { @apply inline-flex items-center gap-1.5 bg-[#1748e8] px-3 py-2.5 font-mono text-[9px] tracking-[0.09em] text-white transition-colors hover:bg-[#121416]; }
+  .status-badge { @apply inline-flex w-fit border px-2 py-1 font-mono text-[8px] font-medium tracking-[0.09em]; }
+  .status-current { @apply border-[#121416]/25 bg-[#121416] text-white; }
+  .status-future { @apply border-[#1748e8]/45 bg-[#1748e8]/[0.08] text-[#1748e8]; }
+  .status-preparing { @apply border-[#121416]/20 bg-transparent text-[#121416]/57; }
+  .status-compact { @apply hidden sm:inline-flex; }
+  .subpage-link { @apply grid gap-4 py-6 sm:grid-cols-[42px_minmax(0,1fr)_auto] sm:items-center; }
+  .subpage-link h3 { @apply font-display text-2xl font-semibold tracking-[-0.045em]; }
+  .subpage-link p { @apply mt-1 text-[12px] leading-6 text-[#121416]/64; }
 }
 
 @media (prefers-reduced-motion: reduce) {

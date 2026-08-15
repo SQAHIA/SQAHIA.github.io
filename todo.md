@@ -7,3 +7,14 @@
 - [x] Heraixが独立した事業主体・ブランドである旨を計画書内に掲載する。
 - [x] 既存ページから新ページへの遷移導線を追加する。
 - [x] PC・モバイルの表示、ナビゲーション、コンテンツの可読性を検証する。
+
+## 完全なページツリー実装
+
+- [x] HOMEを全体の入口として多層サイトのナビゲーションへ接続する。
+- [x] ABOUT配下にPhilosophy、Mission、Vision、Company、History、Organizationを実装する。
+- [x] BUSINESS配下にEntertainment、Software、Hardware Entertainment、SPDEを実装する。
+- [x] PRODUCTS配下にGames、Software、Digital Contentsを実装する。
+- [x] TECHNOLOGY配下にTechnology、Software、API、Researchを実装する。
+- [x] PROJECTS、NEWS、CAREERS、CONTACTのページと各問い合わせ種別を実装する。
+- [x] 「株式会社への道」投資家向けページをサイトマップおよび主要導線に統合する。
+- [x] 全ページのPC・モバイル表示、主要導線、将来計画の注記を検証する。

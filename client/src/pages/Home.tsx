@@ -50,10 +50,11 @@ const process = [
 ];
 
 const navItems = [
-  ["Services", "#services"],
-  ["Approach", "#approach"],
-  ["About", "#about"],
-  ["Road", "/road-to-incorporation"],
+  ["ABOUT", "/about"],
+  ["BUSINESS", "/business"],
+  ["PRODUCTS", "/products"],
+  ["TECH", "/technology"],
+  ["ROAD", "/road-to-incorporation"],
 ];
 
 export default function Home() {
@@ -96,7 +97,7 @@ export default function Home() {
                 {label}
               </a>
             ))}
-            <a href="#contact" className="action-link inline-flex items-center gap-2 bg-[#1748e8] px-4 py-3 font-mono text-[10px] font-medium tracking-[0.1em] text-white">
+            <a href="/contact" className="action-link inline-flex items-center gap-2 bg-[#1748e8] px-4 py-3 font-mono text-[10px] font-medium tracking-[0.1em] text-white">
               CONTACT <ArrowUpRight size={13} strokeWidth={2.2} />
             </a>
           </nav>
@@ -119,7 +120,7 @@ export default function Home() {
                 <ChevronRight size={18} />
               </a>
             ))}
-            <a href="#contact" onClick={closeMenu} className="mt-5 flex items-center justify-between bg-[#1748e8] px-4 py-4 font-mono text-xs tracking-[0.1em] text-white">
+            <a href="/contact" onClick={closeMenu} className="mt-5 flex items-center justify-between bg-[#1748e8] px-4 py-4 font-mono text-xs tracking-[0.1em] text-white">
               CONTACT <ArrowUpRight size={15} />
             </a>
           </nav>
