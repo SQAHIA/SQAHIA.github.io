@@ -35,6 +35,7 @@ type PageData = {
   principles: { label: string; text: string }[];
   note?: string;
   children?: Child[];
+  corporateInfo?: { label: string; value: string; detail?: string; future?: boolean }[];
 };
 
 const aboutChildren: Child[] = [
@@ -100,9 +101,16 @@ const pages: Record<string, PageData> = {
   },
   "/about/company": {
     section: "ABOUT", code: "01.4", trail: "ABOUT / COMPANY", title: "現在地を、\n正確に伝える。", english: "COMPANY", status: "CURRENT",
-    lead: "SQAHIA Digitalは現在、個人事業主として活動しています。",
+    lead: "SQAHIA Digitalは現在、個人事業主として活動しています。法人化に向けた情報は、予定として明確に区別して公開します。",
     body: "法人化、資本金、人員構成、部門編成に関する情報は、投資家向け事業計画書における将来計画です。確定した情報が整い次第、このページを公式の会社情報として更新します。",
-    principles: [{ label: "NAME", text: "SQAHIA Digital" }, { label: "STATUS", text: "個人事業主（現在）" }, { label: "FUTURE", text: "法人化に向けた事業計画を検討中" }], note: "所在地、代表者、登記情報、適格請求書発行事業者番号などは、確定後に掲載します。",
+    principles: [{ label: "NAME", text: "SQAHIA Digital" }, { label: "STATUS", text: "個人事業主（現在）" }, { label: "FUTURE", text: "2028年の法人化を予定" }], note: "設立予定日および所在地は、登記完了前の予定情報です。登記情報、適格請求書発行事業者番号などは、確定後に更新します。",
+    corporateInfo: [
+      { label: "事業者名", value: "SQAHIA Digital", detail: "現在の事業者名" },
+      { label: "代表者", value: "HRことSQAHIA", detail: "代表者名" },
+      { label: "現在の事業形態", value: "個人事業主", detail: "現在の公式情報" },
+      { label: "所在地", value: "静岡県........", detail: "詳細所在地は公開方針確定後に更新予定" },
+      { label: "設立予定日", value: "2028年12月25日", detail: "法人化に向けた予定日", future: true },
+    ],
   },
   "/about/history": {
     section: "ABOUT", code: "01.5", trail: "ABOUT / HISTORY", title: "記録を残し、\n次の判断へ。", english: "HISTORY", status: "CURRENT",
@@ -217,6 +225,8 @@ export default function CorporatePage() {
             <div className="mt-5 grid gap-8 border-t-2 border-[#121416] pt-7 md:grid-cols-[minmax(0,1fr)_230px]"><p className="max-w-2xl text-[16px] leading-9 text-[#121416]/78">{page.body}</p><div className="border-l border-[#121416]/18 pl-5"><p className="font-mono text-[9px] tracking-[0.1em] text-[#121416]/45">CONTENT STATUS</p><p className="mt-3 font-display text-xl font-semibold leading-tight tracking-[-0.04em]">{statusDescription(page.status)}</p></div></div>
 
             <div className="mt-16 grid border border-[#121416]/15 md:grid-cols-3">{page.principles.map((principle, index) => <div key={principle.label} className="min-h-[190px] border-b border-[#121416]/15 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"><span className="font-mono text-[10px] text-[#1748e8]">0{index + 1}</span><p className="mt-9 font-mono text-[9px] tracking-[0.11em] text-[#121416]/45">{principle.label}</p><p className="mt-3 font-display text-xl font-semibold leading-[1.15] tracking-[-0.04em]">{principle.text}</p></div>)}</div>
+
+            {page.corporateInfo && <section className="mt-20"><div className="flex items-end justify-between border-b border-[#121416]/20 pb-4"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">CORPORATE PROFILE</p><h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.055em]">企業情報</h2></div><Building2 size={19} className="text-[#121416]/55" /></div><dl className="corporate-profile">{page.corporateInfo.map((item) => <div key={item.label}><dt>{item.label}</dt><dd><div className="flex flex-wrap items-center gap-2"><strong>{item.value}</strong>{item.future && <span className="profile-plan-badge">予定</span>}</div>{item.detail && <p>{item.detail}</p>}</dd></div>)}</dl></section>}
 
             {page.children && <section className="mt-20"><div className="flex items-end justify-between border-b border-[#121416]/20 pb-4"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">EXPLORE</p><h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.055em]">関連ページ</h2></div><Route size={18} className="text-[#121416]/50" /></div><div className="divide-y divide-[#121416]/15">{page.children.map((child, index) => <a href={child.href} key={child.href} className="subpage-link group"><span className="font-mono text-[10px] text-[#1748e8]">{String(index + 1).padStart(2, "0")}</span><div><h3>{child.title}</h3><p>{child.description}</p></div><div className="flex items-center gap-3"><StatusBadge status={child.status} compact /><ArrowUpRight className="text-[#121416]/45 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" size={17} /></div></a>)}</div></section>}
 

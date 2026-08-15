@@ -138,6 +138,13 @@
   .subpage-link { @apply grid gap-4 py-6 sm:grid-cols-[42px_minmax(0,1fr)_auto] sm:items-center; }
   .subpage-link h3 { @apply font-display text-2xl font-semibold tracking-[-0.045em]; }
   .subpage-link p { @apply mt-1 text-[12px] leading-6 text-[#121416]/64; }
+  .corporate-profile { @apply border-x border-[#121416]/15; }
+  .corporate-profile > div { @apply grid border-b border-[#121416]/15 md:grid-cols-[32%_minmax(0,1fr)]; }
+  .corporate-profile dt { @apply border-b border-[#121416]/15 bg-[#e9e4d9]/60 px-5 py-5 font-mono text-[10px] tracking-[0.08em] text-[#121416]/58 md:border-b-0 md:border-r; }
+  .corporate-profile dd { @apply px-5 py-5; }
+  .corporate-profile strong { @apply font-display text-xl font-semibold tracking-[-0.04em]; }
+  .corporate-profile dd p { @apply mt-2 text-[11px] leading-5 text-[#121416]/56; }
+  .profile-plan-badge { @apply border border-[#1748e8]/45 bg-[#1748e8]/[0.08] px-1.5 py-0.5 font-mono text-[8px] tracking-[0.08em] text-[#1748e8]; }
 }
 
 @media (prefers-reduced-motion: reduce) {
