@@ -77,9 +77,9 @@ const contactChildren: Child[] = [
 const pages: Record<string, PageData> = {
   "/about": {
     section: "ABOUT", code: "01", trail: "SQAHIA DIGITAL / ABOUT", title: "考え方から、\n事業を整える。", english: "ABOUT SQAHIA", status: "CURRENT",
-    lead: "SQAHIA Digitalは、複雑なデジタル課題を事業の次の行動へ変えることを目指す、独立したデジタル事業です。",
-    body: "ここでは、現在の活動を支える考え方と、法人化後を見据えた将来の構想を分けて公開します。確定していない計画は、将来計画であることを明示します。",
-    principles: [{ label: "NOW", text: "現在は個人事業主として活動しています。" }, { label: "METHOD", text: "戦略、体験設計、運用の接点を丁寧に整理します。" }, { label: "OPEN", text: "将来の構想は更新可能な記録として共有します。" }], children: aboutChildren,
+    lead: "SQAHIA Digitalは、エンターテインメントとソフトウェア技術を融合し、新しいデジタル体験を生み出す会社を目指しています。",
+    body: "ここでは、現在の活動を支える考え方と、法人化後を見据えたエンターテインメント・技術事業の構想を分けて公開します。確定していない計画は、将来計画であることを明示します。",
+    principles: [{ label: "NOW", text: "現在は個人事業主として活動しています。" }, { label: "ENTERTAINMENT", text: "人が楽しみ、創造し、交流する体験をつくります。" }, { label: "TECHNOLOGY", text: "表現を可能にする技術資産を育てます。" }], children: aboutChildren,
   },
   "/about/philosophy": {
     section: "ABOUT", code: "01.1", trail: "ABOUT / PHILOSOPHY", title: "デジタルで、\n新しい体験を。", english: "PHILOSOPHY", status: "CURRENT",
