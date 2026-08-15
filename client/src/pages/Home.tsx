@@ -34,11 +34,11 @@ const services = [
   },
   {
     number: "03",
-    title: "Research & SPDE",
-    ja: "次の可能性を研究する",
+    title: "SPDE Data",
+    ja: "SPDEのためのデータを集める",
     description:
-      "技術と表現のまだない接点を探り、次の事業やデジタル体験へつながる研究を積み重ねます。",
-    points: ["新規技術・体験の研究", "プロトタイプと技術検証", "SPDEの構想・準備"],
+      "SPDEによる新しい事業と体験を見据え、データを集め、観察し、次の可能性を見つけるための土台をつくります。",
+    points: ["SPDEのためのデータ収集", "観察・検証・研究", "新しい事業の準備"],
   },
 ];
 
@@ -147,7 +147,7 @@ export default function Home() {
               </motion.h1>
               <motion.div variants={fadeUp} className="mt-8 grid max-w-xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
                 <p className="max-w-[360px] text-[14px] leading-7 text-[#121416]/74 sm:text-[15px]">
-                  SQAHIA Digitalは、エンターテインメントとソフトウェア技術を横断し、まだないデジタル体験をつくる会社です。
+                  SQAHIA Digitalは、エンターテイメントを主に行いながら、ソフトウェアの開発やSPDEによるデータ収集にも取り組む団体です。
                 </p>
                 <a href="#services" className="group inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[11px] font-medium tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">
                   WHAT WE DO <MoveRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -180,7 +180,7 @@ export default function Home() {
                   SQAHIA Digitalは、コンテンツと技術のどちらか一方に限定されない、デジタルエンターテインメントとテクノロジーの会社です。体験をつくることから、技術を生み出します。
                 </p>
                 <p className="text-[14px] leading-8 text-[#121416]/70">
-                  大規模な組織と同じやり方で競争するのではなく、小さくつくり、素早く試し、面白さと可能性を見極めながら育てることを大切にしています。
+                  大規模な組織と同じやり方で競争するのではなく、始めたての頃の「未熟さ」と「無邪気さ」を大切にしながら、作品と事業を育てていきます。
                 </p>
               </div>
             </div>
@@ -226,8 +226,8 @@ export default function Home() {
             <div className="lg:col-span-3"><p className="section-kicker"><span>03</span> APPROACH</p></div>
             <div className="lg:col-span-8 lg:col-start-5">
               <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-end">
-                <h2 className="font-display text-[clamp(2.4rem,4.8vw,5.2rem)] font-semibold leading-[0.98] tracking-[-0.065em]">面白さを起点に、<br />世界をひらく。</h2>
-                <p className="pb-1 text-[14px] leading-8 text-[#121416]/70">コンテンツをつくりながら、必要な技術を見つける。技術をつくりながら、次の表現を可能にする。SQAHIA Digitalは、両方を往復することで新しい体験を形にします。</p>
+                <h2 className="font-display text-[clamp(2.4rem,4.8vw,5.2rem)] font-semibold leading-[0.98] tracking-[-0.065em]">未熟さと無邪気さで、<br />世界をひらく。</h2>
+                <p className="pb-1 text-[14px] leading-8 text-[#121416]/70">大きな組織と同じやり方ではなく、始めたてだからこそ持てる好奇心と軽やかさを大切にします。面白いと思う方向へ試し、学び、次の体験を育てます。</p>
               </div>
               <div className="relative mt-12 grid overflow-hidden border border-[#121416]/15 bg-[#f6f3ec] md:grid-cols-2">
                 <div className="draft-field absolute right-0 top-0 hidden h-full w-1/2 md:block" aria-hidden="true"><div className="draft-square" /><div className="draft-aperture" /><span className="draft-line" /><p className="absolute bottom-7 left-7 font-mono text-[9px] tracking-[0.1em] text-[#121416]/50">ASSEMBLY / 03–04</p></div>
@@ -254,8 +254,8 @@ export default function Home() {
             <div className="grid gap-10 pt-9 md:grid-cols-2 lg:grid-cols-12">
               <div className="lg:col-span-4"><img src="/manus-storage/sqahia-precision_b5989ea7.jpg" alt="設計のためのノートと道具" className="aspect-[4/3] w-full object-cover" /></div>
               <div className="flex flex-col justify-between lg:col-span-4 lg:col-start-6">
-                <p className="text-[15px] leading-8 text-[#121416]/72">現在は個人事業主として、法人化に向けた技術・事業・作品の基盤を整えています。創業後は、EntertainmentとSoftwareを核に、独自のデジタル体験を生み出す体制を育てます。</p>
-                <div className="mt-10 border-l-2 border-[#121416] pl-5"><p className="font-display text-2xl font-semibold tracking-[-0.04em]">コンテンツから技術を生み、<br />技術から次の体験をひらく。</p><p className="mt-3 font-mono text-[10px] leading-5 tracking-[0.05em] text-[#121416]/55">ENTERTAINMENT × SOFTWARE × RESEARCH</p></div>
+                <p className="text-[15px] leading-8 text-[#121416]/72">現在は個人事業主として、法人化に向けた作品・技術・事業の基盤を整えています。エンターテイメントを主軸に、ソフトウェアの開発とSPDEのためのデータ収集を積み重ねます。</p>
+                <div className="mt-10 border-l-2 border-[#121416] pl-5"><p className="font-display text-2xl font-semibold tracking-[-0.04em]">未熟だから、試せる。<br />無邪気だから、つくれる。</p><p className="mt-3 font-mono text-[10px] leading-5 tracking-[0.05em] text-[#121416]/55">ENTERTAINMENT × SOFTWARE × SPDE DATA</p></div>
               </div>
               <div className="flex items-end justify-end lg:col-span-2"><div className="relative h-11 w-11 border border-[#121416]/55"><div className="absolute left-1/2 top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#121416]" /><span className="absolute left-0 top-1/2 h-px w-full bg-[#121416]" /></div></div>
             </div>

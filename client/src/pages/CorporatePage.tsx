@@ -77,15 +77,15 @@ const contactChildren: Child[] = [
 const pages: Record<string, PageData> = {
   "/about": {
     section: "ABOUT", code: "01", trail: "SQAHIA DIGITAL / ABOUT", title: "考え方から、\n事業を整える。", english: "ABOUT SQAHIA", status: "CURRENT",
-    lead: "SQAHIA Digitalは、エンターテインメントとソフトウェア技術を融合し、新しいデジタル体験を生み出す会社を目指しています。",
-    body: "ここでは、現在の活動を支える考え方と、法人化後を見据えたエンターテインメント・技術事業の構想を分けて公開します。確定していない計画は、将来計画であることを明示します。",
-    principles: [{ label: "NOW", text: "現在は個人事業主として活動しています。" }, { label: "ENTERTAINMENT", text: "人が楽しみ、創造し、交流する体験をつくります。" }, { label: "TECHNOLOGY", text: "表現を可能にする技術資産を育てます。" }], children: aboutChildren,
+    lead: "SQAHIA Digitalは、エンターテイメントを主に行い、ソフトウェアの開発やSPDEによるデータ収集にも取り組む団体です。",
+    body: "ここでは、現在の活動を支える考え方と、法人化後を見据えたエンターテイメントを主軸とする事業構想を分けて公開します。確定していない計画は、将来計画であることを明示します。",
+    principles: [{ label: "NOW", text: "現在は個人事業主として活動しています。" }, { label: "ENTERTAINMENT", text: "エンターテイメントを主に行います。" }, { label: "BEYOND", text: "ソフトウェア開発とSPDEデータ収集にも取り組みます。" }], children: aboutChildren,
   },
   "/about/philosophy": {
     section: "ABOUT", code: "01.1", trail: "ABOUT / PHILOSOPHY", title: "デジタルで、\n新しい体験を。", english: "PHILOSOPHY", status: "CURRENT",
     lead: "デジタル技術を、単なる道具ではなく、人が楽しみ、創造し、交流するための基盤として捉えます。",
-    body: "技術、情報、表現を切り離すのではなく、使う人と事業の間に新しい関係をつくること。SQAHIA Digitalは、目的に対して適切な形を考え、複雑さを使える体験へ整えます。",
-    principles: [{ label: "PEOPLE", text: "使う人の行動と感情から考える。" }, { label: "CRAFT", text: "目的に合わせ、形を丁寧に選ぶ。" }, { label: "CONTINUITY", text: "公開後も育てられる設計を残す。" }],
+    body: "技術、情報、表現を切り離すのではなく、面白さのためにそれぞれを結びます。未熟さゆえの好奇心と、無邪気に試す軽やかさを大切にしながら、まだない体験をつくります。",
+    principles: [{ label: "PLAY", text: "面白いと思う方向へ、まず試す。" }, { label: "CURIOSITY", text: "未熟さを、学び続ける力にする。" }, { label: "INNOCENCE", text: "無邪気さを、つくる勇気にする。" }],
   },
   "/about/mission": {
     section: "ABOUT", code: "01.2", trail: "ABOUT / MISSION", title: "技術によって、\n可能性を広げる。", english: "MISSION", status: "FUTURE PLAN",
@@ -216,7 +216,7 @@ export default function CorporatePage() {
             <div className="lg:col-span-3"><p className="section-kicker"><span>{page.code}</span>{page.section}</p></div>
             <div className="lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.13em] text-[#121416]/50">{page.trail}</p><h1 className="mt-5 whitespace-pre-line font-display text-[clamp(3.15rem,7vw,7.8rem)] font-bold leading-[0.86] tracking-[-0.08em]">{page.title}</h1><div className="mt-10 grid gap-6 border-t border-[#121416]/18 pt-5 md:grid-cols-[1fr_auto] md:items-end"><p className="max-w-2xl text-[15px] leading-8 text-[#121416]/75">{page.lead}</p><StatusBadge status={page.status} /></div></div>
           </div>
-          <div className="relative mx-auto max-w-[1520px] border-t border-[#121416]/15 px-5 sm:px-8 lg:px-10"><div className="grid grid-cols-2 divide-x divide-[#121416]/15 sm:grid-cols-4"><MicroStat label="SECTION" value={page.section} /><MicroStat label="STATUS" value={labelFor(page.status)} /><MicroStat label="DOCUMENT" value="Official record" /><MicroStat label="ROUTE" value={location} /></div></div>
+          <div className="relative mx-auto max-w-[1520px] border-t border-[#121416]/15 px-5 sm:px-8 lg:px-10"><div className="grid grid-cols-2 divide-x divide-[#121416]/15 sm:grid-cols-4"><MicroStat label="SECTION" value={page.section} /><MicroStat label="STATUS" value={labelFor(page.status)} /><MicroStat label="DOCUMENT" value="Studio record" /><MicroStat label="ROUTE" value={location} /></div></div>
         </section>
 
         <section className="mx-auto grid max-w-[1520px] lg:grid-cols-12">
@@ -226,6 +226,8 @@ export default function CorporatePage() {
             <div className="mt-5 grid gap-8 border-t-2 border-[#121416] pt-7 md:grid-cols-[minmax(0,1fr)_230px]"><p className="max-w-2xl text-[16px] leading-9 text-[#121416]/78">{page.body}</p><div className="border-l border-[#121416]/18 pl-5"><p className="font-mono text-[9px] tracking-[0.1em] text-[#121416]/45">CONTENT STATUS</p><p className="mt-3 font-display text-xl font-semibold leading-tight tracking-[-0.04em]">{statusDescription(page.status)}</p></div></div>
 
             <div className="mt-16 grid border border-[#121416]/15 md:grid-cols-3">{page.principles.map((principle, index) => <div key={principle.label} className="min-h-[190px] border-b border-[#121416]/15 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"><span className="font-mono text-[10px] text-[#1748e8]">0{index + 1}</span><p className="mt-9 font-mono text-[9px] tracking-[0.11em] text-[#121416]/45">{principle.label}</p><p className="mt-3 font-display text-xl font-semibold leading-[1.15] tracking-[-0.04em]">{principle.text}</p></div>)}</div>
+
+            <section className="section-artifact" aria-label={`${page.section}の編集図`}><div className="artifact-heading"><p>FIELD NOTE / {page.section}</p><span>{page.code}</span></div><div className="artifact-map">{page.principles.map((principle, index) => <div key={principle.label} className="artifact-node"><span>0{index + 1}</span><div><p>{principle.label}</p><strong>{principle.text}</strong></div></div>)}<i className="artifact-beam" /></div><p className="artifact-caption">{page.section === "ABOUT" ? "楽しさ、技術、観察を結び、次の体験へ。" : page.section === "BUSINESS" ? "体験をつくり、技術を育て、次を探る。" : page.section === "TECHNOLOGY" ? "試し、記録し、次の表現を可能にする。" : "つくる前と、公開した後をつなぐ記録。"}</p></section>
 
             {page.corporateInfo && <section className="mt-20"><div className="flex items-end justify-between border-b border-[#121416]/20 pb-4"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">CORPORATE PROFILE</p><h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.055em]">企業情報</h2></div><Building2 size={19} className="text-[#121416]/55" /></div><dl className="corporate-profile">{page.corporateInfo.map((item) => <div key={item.label}><dt>{item.label}</dt><dd><div className="flex flex-wrap items-center gap-2"><strong>{item.value}</strong>{item.future && <span className="profile-plan-badge">予定</span>}</div>{item.detail && <p>{item.detail}</p>}</dd></div>)}</dl></section>}
 
@@ -250,5 +252,5 @@ function MicroStat({ label, value }: { label: string; value: string }) {
   return <div className="min-h-[77px] px-3 py-4 first:pl-0 sm:px-5"><p className="font-mono text-[8px] tracking-[0.1em] text-[#121416]/42">{label}</p><p className="mt-2 truncate font-mono text-[10px] tracking-[-0.02em] text-[#121416]/70">{value}</p></div>;
 }
 
-function labelFor(status: Status) { return status === "CURRENT" ? "CURRENT" : status === "FUTURE PLAN" ? "FUTURE PLAN" : "PREPARING"; }
-function statusDescription(status: Status) { return status === "CURRENT" ? "現在の公式情報です。" : status === "FUTURE PLAN" ? "将来の構想として公開しています。" : "公開情報を準備しています。"; }
+function labelFor(status: Status) { return status === "CURRENT" ? "NOW" : status === "FUTURE PLAN" ? "EXPLORING" : "IN PROGRESS"; }
+function statusDescription(status: Status) { return status === "CURRENT" ? "今、公開している情報です。" : status === "FUTURE PLAN" ? "探究・構想として共有しています。" : "公開に向けて情報を整えています。"; }

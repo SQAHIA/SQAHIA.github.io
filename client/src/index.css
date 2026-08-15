@@ -136,8 +136,8 @@
   .disclosure-note { @apply mt-9 border border-[#1748e8]/50 bg-[#1748e8]/[0.045] p-5; }
   .disclosure-note span { @apply font-mono text-[9px] tracking-[0.1em] text-[#1748e8]; }
   .disclosure-note p { @apply mt-3 max-w-3xl text-[12px] leading-7 text-[#121416]/74; }
-  .corporate-hero { background: linear-gradient(110deg, #f6f3ec 0%, #f6f3ec 61%, #e5eef6 100%); }
-  .corporate-hero::after { content: ""; position: absolute; right: -11%; top: 8%; z-index: 0; width: 54%; height: 80%; background: linear-gradient(135deg, transparent 28%, rgb(20 123 226 / 0.07) 28%, rgb(36 214 220 / 0.1) 58%, transparent 58%); transform: skewX(-10deg); pointer-events: none; }
+  .corporate-hero { background: #f6f3ec; }
+  .corporate-hero::after { content: ""; position: absolute; right: 14%; top: 20%; z-index: 0; width: 2px; height: 58%; background: linear-gradient(to bottom, transparent, rgb(23 48 189 / 0.48), rgb(34 215 220 / 0.55), transparent); transform: rotate(44deg); pointer-events: none; }
   .corporate-sigil, .forum-sigil { position: absolute; z-index: 1; pointer-events: none; width: 280px; height: 280px; opacity: 0.7; }
   .corporate-sigil { right: 9%; top: 18%; }
   .forum-sigil { right: 11%; top: 13%; width: 220px; height: 220px; }
@@ -147,6 +147,17 @@
   .investor-pause { position: relative; overflow: hidden; background: linear-gradient(90deg, #eeece7, #e9f3f2); }
   .investor-pause::after { content: ""; position: absolute; right: 15%; top: -28px; width: 190px; height: 150px; border: 1px solid rgb(18 20 22 / 0.15); transform: rotate(45deg); }
   .investor-reference-line { display: block; position: relative; width: 100%; height: 1px; margin-top: 1.45rem; background: linear-gradient(90deg, #1730bd, #22d7dc, transparent); }
+  .section-artifact { position: relative; margin-top: 3.75rem; overflow: hidden; border: 1px solid rgb(18 20 22 / 0.15); background: linear-gradient(145deg, rgb(233 228 217 / 0.52), rgb(246 243 236 / 0.96)); }
+  .artifact-heading { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgb(18 20 22 / 0.15); padding: 0.8rem 1rem; font-family: "DM Mono", monospace; font-size: 9px; letter-spacing: 0.1em; color: rgb(18 20 22 / 0.52); }
+  .artifact-heading span { color: #147be2; }
+  .artifact-map { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); min-height: 180px; overflow: hidden; }
+  .artifact-node { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2rem; min-height: 180px; border-right: 1px solid rgb(18 20 22 / 0.13); padding: 1.1rem; }
+  .artifact-node:last-of-type { border-right: 0; }
+  .artifact-node > span { font-family: "DM Mono", monospace; font-size: 10px; color: #147be2; }
+  .artifact-node p { font-family: "DM Mono", monospace; font-size: 8px; letter-spacing: 0.1em; color: rgb(18 20 22 / 0.48); }
+  .artifact-node strong { display: block; margin-top: 0.55rem; font-family: "DM Sans", "Noto Sans JP", sans-serif; font-size: 14px; line-height: 1.38; letter-spacing: -0.035em; }
+  .artifact-beam { position: absolute; right: -9%; top: 48%; width: 76%; height: 1px; background: linear-gradient(90deg, transparent, rgb(23 48 189 / 0.5), rgb(34 215 220 / 0.6), transparent); transform: rotate(-18deg); }
+  .artifact-caption { border-top: 1px solid rgb(18 20 22 / 0.14); padding: 0.8rem 1rem; font-family: "DM Mono", monospace; font-size: 9px; line-height: 1.6; letter-spacing: 0.06em; color: rgb(18 20 22 / 0.58); }
   .corporate-hero-grid { background-image: linear-gradient(to right, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.07) calc(100% - 1px)), linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), rgb(18 20 22 / 0.05) calc(100% - 1px)); background-size: 112px 112px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
   .corporate-nav-link { @apply font-mono text-[9px] tracking-[0.08em] text-[#121416]/68 transition-colors hover:text-[#1748e8]; }
   .corporate-contact-link { @apply inline-flex items-center gap-1.5 px-3 py-2.5 font-mono text-[9px] tracking-[0.09em] text-white transition-transform hover:scale-[1.02]; }
