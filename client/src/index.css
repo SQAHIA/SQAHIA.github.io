@@ -245,3 +245,104 @@
   .project-highlight-top { flex-direction: column; gap: 0.9rem; }
   .project-highlight { padding: 1.1rem; }
 }
+
+/* TBL story-maker system — a quiet character map and remixable narrative structure. */
+.tbl-story-system {
+  position: relative;
+  border-top: 2px solid #121416;
+  padding-top: 1.75rem;
+}
+.tbl-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.tbl-member-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 2.25rem;
+  border: 1px solid rgba(18, 20, 22, 0.18);
+}
+.tbl-member-card {
+  position: relative;
+  min-height: 190px;
+  border-right: 1px solid rgba(18, 20, 22, 0.18);
+  padding: 1rem;
+}
+.tbl-member-card:last-child { border-right: 0; }
+.tbl-member-card > span,
+.tbl-principles span {
+  color: #1748e8;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.62rem;
+}
+.tbl-member-glyph {
+  width: 3rem;
+  height: 3rem;
+  margin: 1.75rem 0 1.3rem;
+  border: 1px solid rgba(23, 72, 232, 0.6);
+  border-radius: 50%;
+  background: linear-gradient(135deg, transparent 46%, rgba(31, 207, 218, 0.65) 47%, rgba(23, 72, 232, 0.75) 51%, transparent 52%);
+}
+.tbl-member-card:nth-child(2) .tbl-member-glyph { border-radius: 0; transform: rotate(45deg); }
+.tbl-member-card:nth-child(3) .tbl-member-glyph { border-radius: 0 50% 50% 50%; }
+.tbl-member-card:nth-child(4) .tbl-member-glyph { border-radius: 50% 0; }
+.tbl-member-card h3 {
+  font-family: var(--font-display, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+.tbl-member-card p {
+  margin-top: 0.35rem;
+  color: rgba(18, 20, 22, 0.5);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+}
+.tbl-expansion-note {
+  position: relative;
+  overflow: hidden;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(23, 72, 232, 0.5);
+  padding: 1.1rem 1.25rem;
+  background: rgba(23, 72, 232, 0.04);
+}
+.tbl-expansion-note::after {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  width: 8rem;
+  height: 1px;
+  background: linear-gradient(90deg, #1748e8, #1fcfda);
+  content: "";
+  transform: skewX(-35deg);
+}
+.tbl-expansion-note strong {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+.tbl-principles {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(18, 20, 22, 0.18);
+  padding-top: 1rem;
+}
+.tbl-principles > div {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(18, 20, 22, 0.12);
+  padding: 0.9rem 0;
+}
+.tbl-principles p { font-size: 0.85rem; line-height: 1.8; }
+@media (max-width: 760px) {
+  .tbl-section-heading { flex-direction: column; }
+  .tbl-member-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tbl-member-card:nth-child(2) { border-right: 0; }
+  .tbl-member-card:nth-child(-n + 2) { border-bottom: 1px solid rgba(18, 20, 22, 0.18); }
+}
