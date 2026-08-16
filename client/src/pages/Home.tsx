@@ -55,6 +55,7 @@ const navItems = [
   ["PRODUCTS", "/products"],
   ["TECH", "/technology"],
   ["FORUM", "/forum"],
+  ["TBL", "/forum/tbl"],
 ];
 
 export default function Home() {
@@ -221,7 +222,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
+        <section className="tbl-home-access relative overflow-hidden border-y border-[#121416]/15 bg-[#e9e4d9] py-16 sm:py-24 lg:py-28"><div className="tbl-home-access-grid" aria-hidden="true" /><div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>03</span> PROJECT FORUM</p></div><div className="relative lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">PROJECT：TBL / PUBLIC RECORD</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,5vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.07em]">物語を、<br /><span className="text-[#1748e8]">フォーラム</span>で育てる。</h2><div className="mt-8 flex flex-col justify-between gap-6 border-t border-[#121416]/15 pt-5 sm:flex-row sm:items-end"><p className="max-w-xl text-[14px] leading-7 text-[#121416]/70">四人のベースメンバー、三原則、ストーリーライン。Project：TBLの公開記録を、専用フォーラムで読むことができます。</p><a href="/forum/tbl" className="inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TBL FORUMへ <ArrowUpRight size={15} /></a></div></div></div></section>\n\n        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
           <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12">
             <div className="lg:col-span-3"><p className="section-kicker"><span>03</span> APPROACH</p></div>
             <div className="lg:col-span-8 lg:col-start-5">

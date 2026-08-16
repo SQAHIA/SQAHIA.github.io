@@ -92,3 +92,10 @@
 - [x] Hardware EntertainmentにProject：LanguageHavenを公開プロジェクトとして追加する。
 - [x] LanguageHavenにHeraixOS_Kubと協力先「Heraix Computer Science Department（仮）」を掲載する。
 - [x] フォーラムとLanguageHavenのPC・モバイル表示および導線を確認する。
+
+## Project：TBL専用フォーラム
+
+- [x] Project：TBL専用のフォーラムページを実装する。
+- [x] TBLの三原則、四人のベースメンバー、ストーリーラインをフォーラム投稿として整理する。
+- [x] ホームからTBLフォーラムへ直接アクセスできる導線を追加する。
+- [x] TBLフォーラムのPC・モバイル表示と主要導線を確認する。
