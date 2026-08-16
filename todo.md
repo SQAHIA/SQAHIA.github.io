@@ -58,3 +58,9 @@
 - [x] 採用方針、想定する仲間、参加までの流れを掲載する。
 - [x] CONTACTのRecruitment導線からCAREERSへ接続する。
 - [x] 採用ページのPC・モバイル表示を確認する。
+
+## Project：TBL公開掲載
+
+- [x] /business/entertainmentにProject：TBLの公開紹介を追加する。
+- [x] Project：TBLの公開ステータスとEntertainment領域での位置づけを明示する。
+- [x] Project：TBLのデスクトップ・モバイル表示を確認する。

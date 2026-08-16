@@ -36,6 +36,7 @@ type PageData = {
   note?: string;
   children?: Child[];
   corporateInfo?: { label: string; value: string; detail?: string; future?: boolean }[];
+  projectHighlight?: { title: string; english: string; status: string; body: string };
 };
 
 const aboutChildren: Child[] = [
@@ -134,7 +135,7 @@ const pages: Record<string, PageData> = {
     section: "BUSINESS", code: "02.1", trail: "BUSINESS / ENTERTAINMENT", title: "面白さを、\n体験として届ける。", english: "ENTERTAINMENT", status: "FUTURE PLAN",
     lead: "ゲームとデジタルコンテンツを中心に、ユーザーへ直接価値を届ける事業領域として構想しています。",
     body: "PC、ゲーム機、Webなどを対象とするゲーム開発のほか、映像、音楽、インタラクティブコンテンツ、デジタルアートへの展開を想定します。小さくつくり、素早く試し、可能性を見極めながら育てる開発方式を重視します。",
-    principles: [{ label: "GAMES", text: "オリジナル・実験的なゲーム体験。" }, { label: "CONTENT", text: "映像、音楽、インタラクティブ表現。" }, { label: "METHOD", text: "小さく作り、検証し、育てる。" }], note: "現在公開できるゲーム・コンテンツ作品はありません。作品情報は公開準備が整い次第、Productsに掲載します。",
+    principles: [{ label: "GAMES", text: "オリジナル・実験的なゲーム体験。" }, { label: "CONTENT", text: "映像、音楽、インタラクティブ表現。" }, { label: "METHOD", text: "小さく作り、検証し、育てる。" }], projectHighlight: { title: "Project：TBL", english: "PUBLIC PROJECT / 01", status: "公開", body: "Project：TBLは、SQAHIA DigitalのEntertainment領域で公開するプロジェクトです。プロジェクトに関する確定情報は、このページを起点に順次更新します。" }, note: "Project：TBLを公開しました。その他のゲーム・コンテンツ作品は、公式発表できる情報が整い次第、Productsに掲載します。",
   },
   "/business/software": {
     section: "BUSINESS", code: "02.2", trail: "BUSINESS / SOFTWARE", title: "体験を支える、\n技術そのものを。", english: "SOFTWARE", status: "FUTURE PLAN",
@@ -230,6 +231,8 @@ export default function CorporatePage() {
             <section className="section-artifact" aria-label={`${page.section}の編集図`}><div className="artifact-heading"><p>FIELD NOTE / {page.section}</p><span>{page.code}</span></div><div className="artifact-map">{page.principles.map((principle, index) => <div key={principle.label} className="artifact-node"><span>0{index + 1}</span><div><p>{principle.label}</p><strong>{principle.text}</strong></div></div>)}<i className="artifact-beam" /></div><p className="artifact-caption">{page.section === "ABOUT" ? "楽しさ、技術、観察を結び、次の体験へ。" : page.section === "BUSINESS" ? "体験をつくり、技術を育て、次を探る。" : page.section === "TECHNOLOGY" ? "試し、記録し、次の表現を可能にする。" : "つくる前と、公開した後をつなぐ記録。"}</p></section>
 
             {page.corporateInfo && <section className="mt-20"><div className="flex items-end justify-between border-b border-[#121416]/20 pb-4"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">CORPORATE PROFILE</p><h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.055em]">企業情報</h2></div><Building2 size={19} className="text-[#121416]/55" /></div><dl className="corporate-profile">{page.corporateInfo.map((item) => <div key={item.label}><dt>{item.label}</dt><dd><div className="flex flex-wrap items-center gap-2"><strong>{item.value}</strong>{item.future && <span className="profile-plan-badge">予定</span>}</div>{item.detail && <p>{item.detail}</p>}</dd></div>)}</dl></section>}
+
+            {page.projectHighlight && <section className="project-highlight mt-20" aria-label={`${page.projectHighlight.title}の公開情報`}><div className="project-highlight-top"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">{page.projectHighlight.english}</p><h2 className="mt-3 font-display text-4xl font-semibold tracking-[-0.06em]">{page.projectHighlight.title}</h2></div><span className="project-public-badge">{page.projectHighlight.status}</span></div><p className="mt-7 max-w-2xl text-[15px] leading-8 text-[#121416]/75">{page.projectHighlight.body}</p><div className="project-highlight-mark"><span>PUBLIC / TBL</span><i /></div></section>}
 
             {page.children && <section className="mt-20"><div className="flex items-end justify-between border-b border-[#121416]/20 pb-4"><div><p className="font-mono text-[10px] tracking-[0.11em] text-[#1748e8]">EXPLORE</p><h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.055em]">関連ページ</h2></div><Route size={18} className="text-[#121416]/50" /></div><div className="divide-y divide-[#121416]/15">{page.children.map((child, index) => <a href={child.href} key={child.href} className="subpage-link group"><span className="font-mono text-[10px] text-[#1748e8]">{String(index + 1).padStart(2, "0")}</span><div><h3>{child.title}</h3><p>{child.description}</p></div><div className="flex items-center gap-3"><StatusBadge status={child.status} compact /><ArrowUpRight className="text-[#121416]/45 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1" size={17} /></div></a>)}</div></section>}
 
