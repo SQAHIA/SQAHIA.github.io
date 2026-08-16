@@ -54,7 +54,7 @@ const navItems = [
   ["BUSINESS", "/business"],
   ["PRODUCTS", "/products"],
   ["TECH", "/technology"],
-  ["ROAD", "/road-to-incorporation"],
+  ["FORUM", "/forum"],
 ];
 
 export default function Home() {
@@ -279,7 +279,7 @@ export default function Home() {
 
       <footer className="flex flex-col justify-between gap-4 bg-[#121416] px-5 py-5 text-white/55 sm:flex-row sm:px-8 lg:px-12">
         <p className="font-mono text-[9px] tracking-[0.11em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p>
-        <div className="flex gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/road-to-incorporation">ROAD TO INCORPORATION</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
+        <div className="flex gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/forum">INVESTOR FORUM</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </div>
   );

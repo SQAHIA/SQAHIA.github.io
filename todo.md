@@ -84,3 +84,11 @@
 - [x] Project：TBLのチュペネット表記をレミリオンへ差し替える。
 - [x] TBLの役割名・構造図・ストーリーライン表示をレミリオンに統一する。
 - [x] 差し替え後のPC・モバイル表示を確認する。
+
+## フォーラムとLanguageHaven
+
+- [x] 「株式会社への道」を独立した投資家向けフォーラムページとして実装する。
+- [x] フォーラムの投稿・計画・更新履歴が伝わる構造へ整理する。
+- [x] Hardware EntertainmentにProject：LanguageHavenを公開プロジェクトとして追加する。
+- [x] LanguageHavenにHeraixOS_Kubと協力先「Heraix Computer Science Department（仮）」を掲載する。
+- [x] フォーラムとLanguageHavenのPC・モバイル表示および導線を確認する。
