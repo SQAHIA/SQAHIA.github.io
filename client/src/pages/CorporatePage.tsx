@@ -69,6 +69,8 @@ const technologyChildren: Child[] = [
   { title: "Research", href: "/technology/research", status: "FUTURE PLAN", description: "技術と新しい体験の研究領域。" },
 ];
 
+const contactFormUrl = "https://forms.cloud.microsoft/r/TeYnafGRUr";
+
 const contactChildren: Child[] = [
   { title: "Business", href: "/contact/business", status: "PREPARING", description: "協業・業務に関する窓口。" },
   { title: "Press", href: "/contact/press", status: "PREPARING", description: "取材・メディアに関する窓口。" },
@@ -180,14 +182,14 @@ const pages: Record<string, PageData> = {
   "/careers": { section: "CAREERS", code: "07", trail: "SQAHIA DIGITAL / CAREERS", title: "次の体験を、\n一緒につくる。", english: "CAREERS", status: "PREPARING", lead: "SQAHIA Digitalは、エンターテイメントを中心に、ソフトウェア開発とSPDEのためのデータ収集にも取り組んでいます。現在は、最初の仲間を迎えるための準備期間です。", body: "公開中の募集職種・採用条件はまだありません。未熟さと無邪気さを大切にしながら、面白いと思う方向へ試し、作品と技術を育てる人を迎えられる体制を整えています。募集開始後は、①募集内容の公開、②応募、③作品や考えを聞く対話、④お互いの判断、という順で参加を進めます。役割、働き方、選考の流れ、応募条件はこのページで正式に案内します。", principles: [{ label: "WHO", text: "面白いを起点に、まず試せる人。" }, { label: "HOW", text: "未熟さを学びに、無邪気さを行動に変える。" }, { label: "WHEN", text: "体制と募集条件が整い次第、公開。" }], note: "現在は募集準備中です。採用開始前の個別応募・書類受付は行っていません。" },
   "/contact": {
     section: "CONTACT", code: "08", trail: "SQAHIA DIGITAL / CONTACT", title: "正しい窓口へ、\n正確に届ける。", english: "CONTACT", status: "PREPARING",
-    lead: "お問い合わせ種別ごとの公式窓口を準備しています。",
-    body: "現在、公開している連絡先はありません。事業、報道、採用、一般のお問い合わせについて、対応範囲と連絡方法が確定し次第、このページからご案内します。",
+    lead: "事業、報道、採用、一般のお問い合わせを、専用フォームで受け付けています。",
+    body: "お問い合わせ内容に応じて、下層の窓口またはMicrosoft Formsフォームをご利用ください。フォーム送信後、内容を確認のうえ担当者よりご連絡します。",
     principles: [{ label: "BUSINESS", text: "協業・業務に関する窓口。" }, { label: "PRESS", text: "取材・メディアに関する窓口。" }, { label: "GENERAL", text: "その他のお問い合わせ窓口。" }], children: contactChildren,
   },
-  "/contact/business": { section: "CONTACT", code: "08.1", trail: "CONTACT / BUSINESS", title: "Business\nContact", english: "BUSINESS CONTACT", status: "PREPARING", lead: "協業・業務に関するお問い合わせ窓口です。", body: "現在、公開している業務お問い合わせ先はありません。対応領域と連絡方法が確定し次第、必要な情報とともに本ページでお知らせします。", principles: [{ label: "SCOPE", text: "協業・業務の相談。" }, { label: "STATUS", text: "連絡先は準備中。" }, { label: "UPDATE", text: "確定後に公式公開。" }] },
-  "/contact/press": { section: "CONTACT", code: "08.2", trail: "CONTACT / PRESS", title: "Press\nContact", english: "PRESS CONTACT", status: "PREPARING", lead: "取材・メディアに関するお問い合わせ窓口です。", body: "現在、公開しているプレス窓口はありません。企業情報、製品情報、発表資料が整い次第、取材時のご案内と連絡方法を掲載します。", principles: [{ label: "MEDIA", text: "取材・メディアの窓口。" }, { label: "MATERIALS", text: "公式素材は準備中。" }, { label: "STATUS", text: "連絡先は未公開。" }] },
-  "/contact/recruitment": { section: "CONTACT", code: "08.3", trail: "CONTACT / RECRUITMENT", title: "Recruitment\nContact", english: "RECRUITMENT CONTACT", status: "PREPARING", lead: "採用情報の公開と応募受付に関する案内ページです。", body: "現在、公開中の採用募集および採用窓口はありません。募集開始時には、CAREERSページに応募条件、選考方法、個人情報の取り扱い、連絡方法をまとめて掲載します。", principles: [{ label: "NOW", text: "募集準備中です。" }, { label: "LINK", text: "募集開始時はCAREERSへ掲載。" }, { label: "PRIVACY", text: "情報の取り扱いを明示します。" }] },
-  "/contact/general": { section: "CONTACT", code: "08.4", trail: "CONTACT / GENERAL", title: "General\nContact", english: "GENERAL CONTACT", status: "PREPARING", lead: "その他のお問い合わせ窓口です。", body: "現在、公開している一般お問い合わせ先はありません。連絡方法、対応時間、注意事項が整い次第、公式情報として掲載します。", principles: [{ label: "GENERAL", text: "一般のお問い合わせ。" }, { label: "RESPONSE", text: "対応範囲は準備中。" }, { label: "STATUS", text: "連絡先は未公開。" }] },
+  "/contact/business": { section: "CONTACT", code: "08.1", trail: "CONTACT / BUSINESS", title: "Business\nContact", english: "BUSINESS CONTACT", status: "PREPARING", lead: "協業・業務に関するお問い合わせ窓口です。", body: "協業、業務提携、プロジェクトに関するご相談は、指定のMicrosoft Formsフォームからお送りください。", principles: [{ label: "SCOPE", text: "協業・業務の相談。" }, { label: "STATUS", text: "連絡先は準備中。" }, { label: "UPDATE", text: "確定後に公式公開。" }] },
+  "/contact/press": { section: "CONTACT", code: "08.2", trail: "CONTACT / PRESS", title: "Press\nContact", english: "PRESS CONTACT", status: "PREPARING", lead: "取材・メディアに関するお問い合わせ窓口です。", body: "取材、掲載、メディア関連のご連絡は、指定のMicrosoft Formsフォームからお送りください。", principles: [{ label: "MEDIA", text: "取材・メディアの窓口。" }, { label: "MATERIALS", text: "公式素材は準備中。" }, { label: "STATUS", text: "連絡先は未公開。" }] },
+  "/contact/recruitment": { section: "CONTACT", code: "08.3", trail: "CONTACT / RECRUITMENT", title: "Recruitment\nContact", english: "RECRUITMENT CONTACT", status: "PREPARING", lead: "採用情報の公開と応募受付に関する案内ページです。", body: "現在は募集準備中ですが、採用に関するご連絡や関心の共有は、指定のMicrosoft Formsフォームからお送りいただけます。", principles: [{ label: "NOW", text: "募集準備中です。" }, { label: "LINK", text: "募集開始時はCAREERSへ掲載。" }, { label: "PRIVACY", text: "情報の取り扱いを明示します。" }] },
+  "/contact/general": { section: "CONTACT", code: "08.4", trail: "CONTACT / GENERAL", title: "General\nContact", english: "GENERAL CONTACT", status: "PREPARING", lead: "その他のお問い合わせ窓口です。", body: "ご相談内容が他の窓口に当てはまらない場合は、指定のMicrosoft Formsフォームからお送りください。", principles: [{ label: "GENERAL", text: "一般のお問い合わせ。" }, { label: "RESPONSE", text: "対応範囲は準備中。" }, { label: "STATUS", text: "連絡先は未公開。" }] },
 };
 
 const topLinks = [
@@ -198,6 +200,7 @@ export default function CorporatePage() {
   const [location] = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const page = pages[location] ?? pages["/about"];
+  const isContactPage = location === "/contact" || location.startsWith("/contact/");
 
   return (
     <div className="min-h-screen bg-[#f6f3ec] text-[#121416] selection:bg-[#1748e8] selection:text-white">
@@ -225,7 +228,7 @@ export default function CorporatePage() {
           <aside className="hidden border-r border-[#121416]/15 px-10 py-12 lg:col-span-3 lg:block"><div className="sticky top-[112px]"><p className="font-mono text-[9px] tracking-[0.14em] text-[#121416]/45">SITE TREE</p><a href="/" className="mt-5 flex items-center gap-2 border-y border-[#121416]/15 py-3 font-mono text-[10px] tracking-[0.08em] transition-colors hover:text-[#1748e8]"><ArrowLeft size={13} />HOME</a><a href="/forum" className="mt-7 block border border-[#121416]/15 p-4 transition-colors hover:border-[#1748e8]"><p className="font-mono text-[9px] tracking-[0.1em] text-[#1748e8]">INVESTOR FORUM</p><p className="mt-2 font-display text-lg font-semibold tracking-[-0.04em]">株式会社への道</p><p className="mt-2 text-[11px] leading-5 text-[#121416]/60">将来の法人化計画を公開中</p></a></div></aside>
           <div className="px-5 py-14 sm:px-8 sm:py-20 lg:col-span-8 lg:col-start-5 lg:px-0">
             <p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">{page.english}</p>
-            <div className="mt-5 grid gap-8 border-t-2 border-[#121416] pt-7 md:grid-cols-[minmax(0,1fr)_230px]"><div><p className="max-w-2xl text-[16px] leading-9 text-[#121416]/78">{page.body}</p>{location === "/contact/recruitment" && <a href="/careers" className="mt-7 inline-flex items-center gap-3 border-b border-[#1748e8] pb-2 font-mono text-[10px] tracking-[0.1em] text-[#1748e8]">CAREERSの採用情報を見る <ArrowUpRight size={15} /></a>}</div><div className="border-l border-[#121416]/18 pl-5"><p className="font-mono text-[9px] tracking-[0.1em] text-[#121416]/45">CONTENT STATUS</p><p className="mt-3 font-display text-xl font-semibold leading-tight tracking-[-0.04em]">{statusDescription(page.status)}</p></div></div>
+            <div className="mt-5 grid gap-8 border-t-2 border-[#121416] pt-7 md:grid-cols-[minmax(0,1fr)_230px]"><div><p className="max-w-2xl text-[16px] leading-9 text-[#121416]/78">{page.body}</p>{location === "/contact/recruitment" && <a href="/careers" className="mt-7 inline-flex items-center gap-3 border-b border-[#1748e8] pb-2 font-mono text-[10px] tracking-[0.1em] text-[#1748e8]">CAREERSの採用情報を見る <ArrowUpRight size={15} /></a>}{isContactPage && <a href={contactFormUrl} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-3 bg-[#1748e8] px-5 py-4 font-mono text-[10px] tracking-[0.1em] text-white transition-transform hover:-translate-y-0.5">お問い合わせフォームを開く <ArrowUpRight size={15} /></a>}</div><div className="border-l border-[#121416]/18 pl-5"><p className="font-mono text-[9px] tracking-[0.1em] text-[#121416]/45">CONTENT STATUS</p><p className="mt-3 font-display text-xl font-semibold leading-tight tracking-[-0.04em]">{statusDescription(page.status)}</p></div></div>
 
             <div className="mt-16 grid border border-[#121416]/15 md:grid-cols-3">{page.principles.map((principle, index) => <div key={principle.label} className="min-h-[190px] border-b border-[#121416]/15 p-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"><span className="font-mono text-[10px] text-[#1748e8]">0{index + 1}</span><p className="mt-9 font-mono text-[9px] tracking-[0.11em] text-[#121416]/45">{principle.label}</p><p className="mt-3 font-display text-xl font-semibold leading-[1.15] tracking-[-0.04em]">{principle.text}</p></div>)}</div>
 
