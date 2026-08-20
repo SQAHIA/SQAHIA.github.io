@@ -378,3 +378,27 @@
   .tbl-forum-flow { flex-wrap: wrap; gap: .65rem; }
   .tbl-forum-flow i { display: none; }
 }
+
+/* Growth graph — a measurable stage map for preserving play while the organization grows. */
+.growth-chart-heading { display: flex; justify-content: space-between; gap: 1rem; padding: .85rem 1rem; border-bottom: 1px solid rgba(18,20,22,.15); font: 9px/1.2 var(--font-mono); letter-spacing: .08em; color: rgba(18,20,22,.52); }
+.growth-chart-wrap { overflow-x: auto; }
+.growth-chart { width: 100%; min-width: 900px; border-collapse: collapse; font-size: 11px; line-height: 1.6; }
+.growth-chart th { padding: .85rem .8rem; border-bottom: 1px solid rgba(18,20,22,.22); text-align: left; font: 9px/1.2 var(--font-mono); letter-spacing: .06em; color: #1748e8; white-space: nowrap; }
+.growth-chart td { padding: 1rem .8rem; border-bottom: 1px solid rgba(18,20,22,.11); vertical-align: top; color: rgba(18,20,22,.68); }
+.growth-chart tbody tr:last-child td { border-bottom: 0; }
+.growth-chart td:first-child { color: #121416; white-space: nowrap; }
+.growth-chart td strong { font: 600 14px/1.2 var(--font-display); letter-spacing: -.04em; }
+.growth-chart .growth-next { color: #1748e8; }
+.growth-chart-caption { padding: .8rem 1rem; border-top: 1px solid rgba(18,20,22,.15); font: 10px/1.5 var(--font-mono); color: rgba(18,20,22,.52); }
+@media (max-width: 700px) {
+  .growth-chart-heading { flex-direction: column; gap: .35rem; }
+  .growth-chart { min-width: 0; display: block; }
+  .growth-chart thead { display: none; }
+  .growth-chart tbody, .growth-chart tr, .growth-chart td { display: block; }
+  .growth-chart tr { padding: 1.15rem 1rem; border-bottom: 1px solid rgba(18,20,22,.15); }
+  .growth-chart tr:last-child { border-bottom: 0; }
+  .growth-chart td { display: grid; grid-template-columns: 7.5rem 1fr; gap: .8rem; padding: .22rem 0; border: 0; }
+  .growth-chart td::before { content: attr(data-label); font: 9px/1.4 var(--font-mono); letter-spacing: .05em; color: #1748e8; }
+  .growth-chart td strong { font-size: 17px; }
+  .growth-chart-caption { padding: .8rem 1rem 1rem; }
+}

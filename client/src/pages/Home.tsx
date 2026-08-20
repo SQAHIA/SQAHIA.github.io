@@ -49,6 +49,16 @@ const process = [
   ["04", "Learn", "運用から学び、次の改善につなげる"],
 ];
 
+const growthStages = [
+  ["アイデア", "ガレージ制度", "社員がアイデアを提案・簡易企画化", "1～3人", "0～50万円程度", "アイデアシート", "試作"],
+  ["試作", "ガレージ制度", "プロトタイプ制作・ユーザー検証", "3～5人", "50～300万円程度", "試作品・検証結果", "プロジェクト化"],
+  ["プロジェクト化", "ガレージ → プロジェクト", "市場性・実現性を検証し、事業計画を作成", "5～10人", "300～1,000万円程度", "PoC・事業計画", "スタジオ化候補"],
+  ["スタジオ化", "スタジオ制", "正式なスタジオを設立し、継続的に制作・運営", "10～50人", "数千万円～", "製品・サービス", "成長"],
+  ["成長", "スタジオ制", "人員・予算を増やし事業を拡大", "20～100人", "事業規模に応じて", "売上・利益・利用者評価等", "再評価"],
+  ["再評価", "サンセット・ルール", "定期的に成果・将来性・組織状態を評価", "―", "―", "継続・再編・終了判断", "継続・再編・終了"],
+  ["継続・再編・終了", "サンセット・ルール", "継続、縮小、他スタジオとの統合、終了を決定", "―", "―", "人員・予算・設備を再配分", "新しい挑戦へ"],
+];
+
 const navItems = [
   ["ABOUT", "/about"],
   ["BUSINESS", "/business"],
@@ -143,8 +153,8 @@ export default function Home() {
                 <p className="font-mono text-[10px] font-medium tracking-[0.17em] text-[#121416]/65 sm:text-[11px]">DIGITAL ENTERTAINMENT &amp; TECHNOLOGY / JAPAN</p>
               </motion.div>
               <motion.h1 variants={fadeUp} className="font-display text-[clamp(3.45rem,8.3vw,8.4rem)] font-bold leading-[0.88] tracking-[-0.075em] text-[#121416]">
-                <span className="text-[#1748e8]">次の体験</span>を、<br />
-                技術からつくる。
+                <span className="text-[#1748e8]">新たなエンタメ</span>と<br />
+                技術を作り出す
               </motion.h1>
               <motion.div variants={fadeUp} className="mt-8 grid max-w-xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
                 <p className="max-w-[360px] text-[14px] leading-7 text-[#121416]/74 sm:text-[15px]">
@@ -222,25 +232,18 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="tbl-home-access relative overflow-hidden border-y border-[#121416]/15 bg-[#e9e4d9] py-16 sm:py-24 lg:py-28"><div className="tbl-home-access-grid" aria-hidden="true" /><div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>03</span> PROJECT FORUM</p></div><div className="relative lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">PROJECT：TBL / PUBLIC RECORD</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,5vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.07em]">物語を、<br /><span className="text-[#1748e8]">フォーラム</span>で育てる。</h2><div className="mt-8 flex flex-col justify-between gap-6 border-t border-[#121416]/15 pt-5 sm:flex-row sm:items-end"><p className="max-w-xl text-[14px] leading-7 text-[#121416]/70">四人のベースメンバー、三原則、ストーリーライン。Project：TBLの公開記録を、専用フォーラムで読むことができます。</p><a href="/forum/tbl" className="inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TBL FORUMへ <ArrowUpRight size={15} /></a></div></div></div></section>\n\n        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
+        <section className="tbl-home-access relative overflow-hidden border-y border-[#121416]/15 bg-[#e9e4d9] py-16 sm:py-24 lg:py-28"><div className="tbl-home-access-grid" aria-hidden="true" /><div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>03</span> PROJECT FORUM</p></div><div className="relative lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">PROJECT：TBL / PUBLIC RECORD</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,5vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.07em]">物語を、<br /><span className="text-[#1748e8]">フォーラム</span>で育てる。</h2><div className="mt-8 flex flex-col justify-between gap-6 border-t border-[#121416]/15 pt-5 sm:flex-row sm:items-end"><p className="max-w-xl text-[14px] leading-7 text-[#121416]/70">作るのはあなた次第、Project：TBLはどなたでも自由に想像できるコミュニティーの一つです。公開記録を、専用フォーラムで読むことができます。</p><a href="/forum/tbl" className="inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TBL FORUMへ <ArrowUpRight size={15} /></a></div></div></div></section>\n\n        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
           <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12">
             <div className="lg:col-span-3"><p className="section-kicker"><span>03</span> APPROACH</p></div>
             <div className="lg:col-span-8 lg:col-start-5">
               <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-end">
-                <h2 className="font-display text-[clamp(2.4rem,4.8vw,5.2rem)] font-semibold leading-[0.98] tracking-[-0.065em]">未熟さと無邪気さで、<br />世界をひらく。</h2>
+                <h2 className="font-display text-[clamp(2.4rem,4.8vw,5.2rem)] font-semibold leading-[0.98] tracking-[-0.065em]">大企業になっても、<br />面白さを確保する。</h2>
                 <p className="pb-1 text-[14px] leading-8 text-[#121416]/70">大きな組織と同じやり方ではなく、始めたてだからこそ持てる好奇心と軽やかさを大切にします。面白いと思う方向へ試し、学び、次の体験を育てます。</p>
               </div>
-              <div className="relative mt-12 grid overflow-hidden border border-[#121416]/15 bg-[#f6f3ec] md:grid-cols-2">
-                <div className="draft-field absolute right-0 top-0 hidden h-full w-1/2 md:block" aria-hidden="true"><div className="draft-square" /><div className="draft-aperture" /><span className="draft-line" /><p className="absolute bottom-7 left-7 font-mono text-[9px] tracking-[0.1em] text-[#121416]/50">ASSEMBLY / 03–04</p></div>
-                <div className="relative z-10 grid divide-y divide-[#121416]/15 md:col-span-1">
-                  {process.map(([number, title, description]) => (
-                    <div key={number} className="group flex gap-5 p-5 sm:p-7">
-                      <span className="font-mono text-[10px] text-[#1748e8]">{number}</span>
-                      <div><h3 className="font-display text-2xl font-semibold tracking-[-0.04em]">{title}</h3><p className="mt-1.5 text-[12px] leading-6 text-[#121416]/63">{description}</p></div>
-                    </div>
-                  ))}
-                </div>
-                <div className="relative hidden min-h-[400px] md:block"><div className="absolute bottom-5 right-5 bg-[#121416] px-3 py-2 font-mono text-[9px] tracking-[0.1em] text-white">PROJECT FLOW / 04 STEPS</div></div>
+              <div className="relative mt-12 overflow-hidden border border-[#121416]/15 bg-[#f6f3ec]">
+                <div className="growth-chart-heading"><span>GROWTH GRAPH / 07 STAGES</span><span>GARAGE → STUDIO → RE-EVALUATE</span></div>
+                <div className="growth-chart-wrap"><table className="growth-chart"><thead><tr><th>段階</th><th>制度</th><th>具体的な活動</th><th>人員</th><th>予算</th><th>成果</th><th>次の段階</th></tr></thead><tbody>{growthStages.map(([stage, system, activity, people, budget, outcome, next]) => <tr key={stage}><td data-label="段階"><strong>{stage}</strong></td><td data-label="制度">{system}</td><td data-label="具体的な活動">{activity}</td><td data-label="人員">{people}</td><td data-label="予算">{budget}</td><td data-label="成果">{outcome}</td><td data-label="次の段階" className="growth-next">{next}</td></tr>)}</tbody></table></div>
+                <p className="growth-chart-caption">面白さを守りながら、規模に応じて制度と責任を更新するための成長設計。</p>
               </div>
             </div>
           </div>
