@@ -118,3 +118,19 @@
 - [x] 現在実装されているページ関連ファイルの一覧を確認する。
 - [x] ページコンポーネント、ルーティング、共通スタイルをアーカイブする。
 - [x] 書き出しアーカイブの内容を確認し、ユーザーへ共有する。
+
+## 書き出し対象と新構成案の確認
+
+- [x] 必要な書き出し対象ファイルを確認する。
+- [x] 添付されたプロダクト企業サイト構成案の反映範囲を確認する。
+
+## プロダクト企業サイトへの再設計
+
+- [x] HomeをHeraixOS Kub、Software、AI、Gaming、Digital Platformを伝える入口として再構成する。
+- [x] BusinessにSoftware、AI & Intelligence、Gaming & Entertainment、Digital Platform、R&Dを設ける。
+- [x] ProductsにHeraixOS、Heraix IGRAC、Heraklionを掲載する。
+- [x] TechnologyにHeraix API、Runtime、Platform、Engineeringを掲載する。
+- [x] Research、QA & Security、Downloads、Technology Mapのページを追加する。
+- [x] 技術情報・リリース・セキュリティ情報は未確定情報を断定せず、準備中または構想として表示する。
+- [x] 新しいページツリーのPC・モバイル表示と主要導線を検証する。
+- [x] 更新済みページ関連ファイルを最小構成で書き出す。

@@ -16,30 +16,16 @@ import {
 import { useEffect, useState } from "react";
 
 const services = [
-  {
-    number: "01",
-    title: "Entertainment",
-    ja: "エンターテインメントをつくる",
-    description:
-      "ゲーム、映像、音楽、インタラクティブコンテンツを通じて、人が楽しみ、創造し、交流できる新しい体験を生み出します。",
-    points: ["ゲーム・インタラクティブ作品", "映像・音楽・デジタル表現", "オリジナルIPと体験の開発"],
-  },
-  {
-    number: "02",
-    title: "Software",
-    ja: "ソフトウェアをつくる",
-    description:
-      "作品やサービスを成立させるソフトウェア、開発ツール、技術基盤を、自らの手で育てます。",
-    points: ["ソフトウェアプロダクト", "開発ツール・技術基盤", "API・開発支援技術"],
-  },
-  {
-    number: "03",
-    title: "SPDE Data",
-    ja: "SPDEのためのデータを集める",
-    description:
-      "SPDEによる新しい事業と体験を見据え、データを集め、観察し、次の可能性を見つけるための土台をつくります。",
-    points: ["SPDEのためのデータ収集", "観察・検証・研究", "新しい事業の準備"],
-  },
+  { number: "01", title: "Software", ja: "ソフトウェアをつくる", description: "OS、システム、アプリケーション、開発基盤を通じて、自社プロダクトの体験を支える技術を育てます。", points: ["OS・システムソフトウェア", "開発ツール・技術基盤", "API・開発支援技術"] },
+  { number: "02", title: "AI & Intelligence", ja: "知性の仕組みを研究する", description: "Heraklionを含むAI・LLM・エージェント研究を通じて、創作と開発を支える新しい知性の形を探ります。", points: ["AI・LLMプロジェクト", "エージェントアーキテクチャ", "研究開発・検証"] },
+  { number: "03", title: "Gaming & Entertainment", ja: "遊びと表現をつくる", description: "ゲーム、ストーリーメーカー、デジタルコンテンツを通じて、参加者が想像を広げられる体験をつくります。", points: ["Project：TBL", "Heraix IGRAC構想", "ゲーム・デジタルコンテンツ"] },
+  { number: "04", title: "Digital Platform", ja: "プラットフォームを育てる", description: "プロダクト、コミュニティー、Runtime、ストアをつなぎ、自社の技術と作品が循環する場を設計します。", points: ["HeraixOS Kub", "Runtime・Platform", "研究とプロダクトの接続"] },
+];
+
+const productSignals = [
+  ["01", "HeraixOS Kub", "A computing platform by SQAHIA Digital.", "/products/heraixos", "PREPARING"],
+  ["02", "Heraix IGRAC", "Create / Play / Publish のためのプラットフォーム構想。", "/products/heraix-igrac", "FUTURE PLAN"],
+  ["03", "Heraklion", "AI / LLMの研究開発プロジェクト。", "/products/heraklion", "R&D"],
 ];
 
 const process = [
@@ -64,8 +50,9 @@ const navItems = [
   ["BUSINESS", "/business"],
   ["PRODUCTS", "/products"],
   ["TECH", "/technology"],
-  ["FORUM", "/forum"],
-  ["TBL", "/forum/tbl"],
+  ["RESEARCH", "/research"],
+  ["QA", "/qa-security"],
+  ["DOWNLOADS", "/downloads"],
 ];
 
 export default function Home() {
@@ -102,7 +89,7 @@ export default function Home() {
             </div>
           </a>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="メインナビゲーション">
+          <nav className="hidden items-center gap-4 xl:gap-5 lg:flex" aria-label="メインナビゲーション">
             {navItems.map(([label, href]) => (
               <a key={label} href={href} className="nav-link font-mono text-[11px] tracking-[0.1em] text-[#121416]/75">
                 {label}
@@ -232,7 +219,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="tbl-home-access relative overflow-hidden border-y border-[#121416]/15 bg-[#e9e4d9] py-16 sm:py-24 lg:py-28"><div className="tbl-home-access-grid" aria-hidden="true" /><div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>03</span> PROJECT FORUM</p></div><div className="relative lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">PROJECT：TBL / PUBLIC RECORD</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,5vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.07em]">物語を、<br /><span className="text-[#1748e8]">フォーラム</span>で育てる。</h2><div className="mt-8 flex flex-col justify-between gap-6 border-t border-[#121416]/15 pt-5 sm:flex-row sm:items-end"><p className="max-w-xl text-[14px] leading-7 text-[#121416]/70">作るのはあなた次第、Project：TBLはどなたでも自由に想像できるコミュニティーの一つです。公開記録を、専用フォーラムで読むことができます。</p><a href="/forum/tbl" className="inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TBL FORUMへ <ArrowUpRight size={15} /></a></div></div></div></section>\n\n        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
+        <section id="products" className="relative overflow-hidden border-y border-[#121416]/15 bg-[#f6f3ec] py-20 sm:py-28 lg:py-36"><div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>03</span> PRODUCTS</p></div><div className="lg:col-span-8 lg:col-start-5"><div className="flex flex-col justify-between gap-6 border-b border-[#121416]/15 pb-8 md:flex-row md:items-end"><div><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">SQAHIA DIGITAL / PRODUCT SIGNALS</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.4rem,4.8vw,5.2rem)] font-semibold leading-[0.96] tracking-[-0.065em]">つくっているものが、<br />会社を語る。</h2></div><a href="/technology-map" className="inline-flex w-fit items-center gap-2 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TECHNOLOGY MAP <ArrowUpRight size={15} /></a></div><div className="divide-y divide-[#121416]/15">{productSignals.map(([number, title, description, href, status]) => <a key={title} href={href} className="group grid gap-4 py-7 transition-colors hover:text-[#1748e8] sm:grid-cols-[54px_1fr_auto] sm:items-center"><span className="font-mono text-[10px] text-[#1748e8]">{number}</span><div><h3 className="font-display text-3xl font-semibold tracking-[-0.05em]">{title}</h3><p className="mt-2 text-[13px] leading-6 text-[#121416]/65 group-hover:text-[#1748e8]/75">{description}</p></div><div className="flex items-center gap-4 font-mono text-[10px] tracking-[0.1em]"><span className="border border-[#121416]/20 px-2 py-1 text-[#121416]/55">{status}</span><ArrowUpRight size={16} /></div></a>)}</div></div></div></section>
+
+        <section className="tbl-home-access relative overflow-hidden border-y border-[#121416]/15 bg-[#e9e4d9] py-16 sm:py-24 lg:py-28"><div className="tbl-home-access-grid" aria-hidden="true" /><div className="mx-auto grid max-w-[1440px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:px-12"><div className="lg:col-span-3"><p className="section-kicker"><span>04</span> PROJECT FORUM</p></div><div className="relative lg:col-span-8 lg:col-start-5"><p className="font-mono text-[10px] tracking-[0.12em] text-[#1748e8]">PROJECT：TBL / PUBLIC RECORD</p><h2 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,5vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.07em]">物語を、<br /><span className="text-[#1748e8]">フォーラム</span>で育てる。</h2><div className="mt-8 flex flex-col justify-between gap-6 border-t border-[#121416]/15 pt-5 sm:flex-row sm:items-end"><p className="max-w-xl text-[14px] leading-7 text-[#121416]/70">作るのはあなた次第、Project：TBLはどなたでも自由に想像できるコミュニティーの一つです。公開記録を、専用フォーラムで読むことができます。</p><a href="/forum/tbl" className="inline-flex w-fit items-center gap-3 border-b border-[#121416] pb-2 font-mono text-[10px] tracking-[0.1em] transition-colors hover:border-[#1748e8] hover:text-[#1748e8]">TBL FORUMへ <ArrowUpRight size={15} /></a></div></div></div></section>
+
+        <section id="approach" className="overflow-hidden bg-[#e9e4d9] py-20 sm:py-28 lg:py-36">
           <div className="mx-auto grid max-w-[1440px] gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:px-12">
             <div className="lg:col-span-3"><p className="section-kicker"><span>03</span> APPROACH</p></div>
             <div className="lg:col-span-8 lg:col-start-5">
@@ -274,7 +265,7 @@ export default function Home() {
             <p className="section-kicker"><span>05</span> CONTACT</p>
             <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:items-end">
               <div className="lg:col-span-9"><h2 className="font-display text-[clamp(3.1rem,7vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.075em]">次の体験を、<br />ともにつくる。</h2></div>
-              <div className="lg:col-span-3"><p className="mb-6 text-[14px] leading-7 text-[#121416]/72">協業、取材、採用、事業に関する連絡窓口は、準備が整い次第このサイトでお知らせします。</p><a href="/contact" className="action-link inline-flex w-full items-center justify-between px-4 py-4 font-mono text-[11px] font-medium tracking-[0.1em] text-white">CONTACT DETAILS COMING SOON <ArrowUpRight size={17} /></a></div>
+              <div className="lg:col-span-3"><p className="mb-6 text-[14px] leading-7 text-[#121416]/72">協業、取材、採用、技術に関するお問い合わせを、公式フォームで受け付けています。</p><a href="/contact" className="action-link inline-flex w-full items-center justify-between px-4 py-4 font-mono text-[11px] font-medium tracking-[0.1em] text-white">CONTACT SQAHIA DIGITAL <ArrowUpRight size={17} /></a></div>
             </div>
             <p className="mt-16 border-t border-[#121416]/20 pt-4 font-mono text-[10px] tracking-[0.08em] text-[#121416]/55">SQAHIA DIGITAL — INDEPENDENT DIGITAL STUDIO / JAPAN</p>
           </div>
@@ -283,7 +274,7 @@ export default function Home() {
 
       <footer className="flex flex-col justify-between gap-4 bg-[#121416] px-5 py-5 text-white/55 sm:flex-row sm:px-8 lg:px-12">
         <p className="font-mono text-[9px] tracking-[0.11em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p>
-        <div className="flex gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/forum">INVESTOR FORUM</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
+        <div className="flex flex-wrap gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/technology-map">TECHNOLOGY MAP</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/forum">INVESTOR FORUM</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </div>
   );

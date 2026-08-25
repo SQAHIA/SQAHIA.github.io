@@ -50,23 +50,30 @@ const aboutChildren: Child[] = [
 ];
 
 const businessChildren: Child[] = [
-  { title: "Entertainment", href: "/business/entertainment", status: "FUTURE PLAN", description: "ゲームとデジタルコンテンツを扱う構想。" },
-  { title: "Software", href: "/business/software", status: "FUTURE PLAN", description: "プロダクトと技術基盤を育てる構想。" },
-  { title: "Hardware Entertainment", href: "/business/hardware-entertainment", status: "PREPARING", description: "ハードウェアと体験の接点を探る研究領域。" },
-  { title: "SPDE", href: "/business/spde", status: "FUTURE PLAN", description: "4年目以降に始動する新規領域。" },
+  { title: "Software Development", href: "/business/software", status: "PREPARING", description: "OS、システム、アプリケーションを扱う事業領域。" },
+  { title: "AI & Intelligence", href: "/business/ai", status: "FUTURE PLAN", description: "AI・LLM・エージェントを研究する領域。" },
+  { title: "Gaming & Entertainment", href: "/business/gaming-entertainment", status: "CURRENT", description: "ゲーム、ストーリー、デジタルコンテンツを扱う領域。" },
+  { title: "Digital Platform", href: "/business/digital-platform", status: "FUTURE PLAN", description: "作品と技術を接続するプラットフォーム構想。" },
+  { title: "R&D", href: "/business/research-development", status: "PREPARING", description: "次の製品と技術を検証する研究開発。" },
 ];
 
 const productChildren: Child[] = [
-  { title: "Games", href: "/products/games", status: "PREPARING", description: "ゲーム作品の公式アーカイブ。" },
-  { title: "Software", href: "/products/software", status: "PREPARING", description: "ソフトウェア製品の公式アーカイブ。" },
-  { title: "Digital Contents", href: "/products/digital-contents", status: "PREPARING", description: "映像、音楽、インタラクティブ作品のアーカイブ。" },
+  { title: "HeraixOS", href: "/products/heraixos", status: "PREPARING", description: "SQAHIA Digitalが開発するコンピューティングプラットフォーム。" },
+  { title: "Heraix IGRAC", href: "/products/heraix-igrac", status: "FUTURE PLAN", description: "Create / Play / Publishのためのプラットフォーム構想。" },
+  { title: "Heraklion", href: "/products/heraklion", status: "FUTURE PLAN", description: "AI / LLM・マルチエージェントの研究開発プロジェクト。" },
 ];
 
 const technologyChildren: Child[] = [
-  { title: "Technology", href: "/technology/technology", status: "PREPARING", description: "体験を支える技術観点。" },
-  { title: "Software", href: "/technology/software", status: "PREPARING", description: "ソフトウェア開発のアプローチ。" },
-  { title: "API", href: "/technology/api", status: "PREPARING", description: "将来公開する開発者向け技術。" },
-  { title: "Research", href: "/technology/research", status: "FUTURE PLAN", description: "技術と新しい体験の研究領域。" },
+  { title: "Heraix API", href: "/technology/heraix-api", status: "PREPARING", description: "将来の開発者向け接続基盤。" },
+  { title: "Runtime", href: "/technology/runtime", status: "PREPARING", description: "作品とプロダクトを支える実行基盤。" },
+  { title: "Platform", href: "/technology/platform", status: "PREPARING", description: "OS、ストア、Studioをつなぐ構成。" },
+  { title: "Engineering", href: "/technology/engineering", status: "PREPARING", description: "設計、ビルド、QAを支える開発文化。" },
+];
+
+const qaChildren: Child[] = [
+  { title: "QA Reports", href: "/qa-security/qa-reports", status: "PREPARING", description: "公開可能な検証記録を整理するページ。" },
+  { title: "Security", href: "/qa-security/security", status: "PREPARING", description: "セキュリティ方針と連絡方法の準備。" },
+  { title: "Advisories", href: "/qa-security/advisories", status: "PREPARING", description: "将来のセキュリティ告知アーカイブ。" },
 ];
 
 const contactFormUrl = "https://forms.cloud.microsoft/r/TeYnafGRUr";
@@ -130,9 +137,9 @@ const pages: Record<string, PageData> = {
   },
   "/business": {
     section: "BUSINESS", code: "02", trail: "SQAHIA DIGITAL / BUSINESS", title: "事業を、\n多層に育てる。", english: "BUSINESS", status: "FUTURE PLAN",
-    lead: "将来のSQAHIA Digitalは、体験、ソフトウェア、研究の複数領域を段階的に育てる構想です。",
-    body: "初期はEntertainmentとSoftwareを中心に、ユーザーへの直接価値と技術資産の両方をつくります。各領域の詳細は、事業計画に基づく将来の方向性であり、提供開始が確定したサービスではありません。",
-    principles: [{ label: "ENT", text: "体験をつくり、市場とつながる。" }, { label: "SFT", text: "技術をつくり、事業の土台にする。" }, { label: "SPD", text: "次の領域を研究・検証する。" }], children: businessChildren,
+    lead: "SQAHIA Digitalは、ソフトウェア、AI、エンターテインメント、デジタルプラットフォーム、研究開発を接続する事業構想を育てています。",
+    body: "自社プロダクトを企画・開発し、創作と技術の両方を積み上げることを目指します。各領域の提供状況は異なるため、公開済みの事実と準備中・将来構想を明確に分けて表示します。",
+    principles: [{ label: "PRODUCT", text: "自社の製品と体験をつくる。" }, { label: "INTELLIGENCE", text: "知性の仕組みを研究する。" }, { label: "PLATFORM", text: "技術と作品の循環をつくる。" }], children: businessChildren,
   },
   "/business/entertainment": {
     section: "BUSINESS", code: "02.1", trail: "BUSINESS / ENTERTAINMENT", title: "面白さを、\n体験として届ける。", english: "ENTERTAINMENT", status: "FUTURE PLAN",
@@ -159,24 +166,35 @@ const pages: Record<string, PageData> = {
     principles: [{ label: "TIMING", text: "事業開始4年目以降を想定。" }, { label: "RESEARCH", text: "市場調査と技術検証を優先。" }, { label: "FLEXIBILITY", text: "詳細な仕様は段階的に定義。" }], note: "SPDEの正式名称・サービス内容は未確定です。",
   },
   "/products": {
-    section: "PRODUCTS", code: "03", trail: "SQAHIA DIGITAL / PRODUCTS", title: "まだないものを、\n公開の準備へ。", english: "PRODUCTS", status: "PREPARING",
-    lead: "製品・作品の公式アーカイブです。現在、公開できる製品情報はありません。",
-    body: "Games、Software、Digital Contentsの各ページを、製品公開時の正式な情報源として整備しています。作品名、対応環境、提供方法、利用規約、サポート情報などは、内容が確定したものから掲載します。",
-    principles: [{ label: "SOURCE", text: "製品の正式情報を集約する場所。" }, { label: "DISCLOSURE", text: "公開可能な事実のみ掲載する。" }, { label: "ARCHIVE", text: "作品と更新履歴を残す。" }], children: productChildren,
+    section: "PRODUCTS", code: "03", trail: "SQAHIA DIGITAL / PRODUCTS", title: "つくっているものを、\n正確に伝える。", english: "PRODUCTS", status: "PREPARING",
+    lead: "HeraixOS、Heraix IGRAC、Heraklionを中心に、自社プロダクトと研究プロジェクトの公式情報を整理します。",
+    body: "製品のダウンロード、対応環境、技術仕様、リリース情報は、公開条件が整ったものから掲載します。現時点で未確定の内容は、構想または準備中として明示します。",
+    principles: [{ label: "HERAIXOS", text: "コンピューティングプラットフォーム。" }, { label: "IGRAC", text: "創作と遊びをつなぐ構想。" }, { label: "HERAKLION", text: "AI / LLMの研究開発。" }], children: productChildren,
   },
-  "/products/games": { section: "PRODUCTS", code: "03.1", trail: "PRODUCTS / GAMES", title: "Games\nArchive", english: "GAMES", status: "PREPARING", lead: "ゲーム作品の公式アーカイブを準備しています。", body: "現在、公開できるタイトル、対応プラットフォーム、発売時期はありません。作品の公開準備が整い次第、公式トレーラー、ストアリンク、サポート情報をこのページに掲載します。", principles: [{ label: "TITLES", text: "公開タイトル準備中。" }, { label: "PLATFORMS", text: "対応環境は未発表。" }, { label: "SUPPORT", text: "作品公開に合わせて案内予定。" }] },
-  "/products/software": { section: "PRODUCTS", code: "03.2", trail: "PRODUCTS / SOFTWARE", title: "Software\nArchive", english: "SOFTWARE PRODUCTS", status: "PREPARING", lead: "ソフトウェア製品の公式アーカイブを準備しています。", body: "現在、公開できる製品、利用環境、提供形態はありません。製品の公開準備が整い次第、製品仕様、導入方法、更新情報を公式情報として掲載します。", principles: [{ label: "PRODUCTS", text: "公開製品は準備中。" }, { label: "DOCUMENTS", text: "利用資料は公開時に整備。" }, { label: "UPDATES", text: "更新履歴を公式に記録。" }] },
-  "/products/digital-contents": { section: "PRODUCTS", code: "03.3", trail: "PRODUCTS / DIGITAL CONTENTS", title: "Digital\nContents", english: "DIGITAL CONTENTS", status: "PREPARING", lead: "映像、音楽、インタラクティブ作品などの公式アーカイブを準備しています。", body: "現在、公開できるコンテンツ情報はありません。公開時には、作品情報、クレジット、配信先、利用条件などを正確にお知らせします。", principles: [{ label: "VIDEO", text: "映像作品の情報を準備。" }, { label: "MUSIC", text: "音楽・音声作品の情報を準備。" }, { label: "INTERACTIVE", text: "インタラクティブ作品の情報を準備。" }] },
+  "/products/heraixos": { section: "PRODUCTS", code: "03.1", trail: "PRODUCTS / HERAIXOS", title: "HeraixOS\nPlatform", english: "HERAIXOS", status: "PREPARING", lead: "HeraixOSは、SQAHIA Digitalが開発するコンピューティングプラットフォームです。", body: "HeraixOS Kubを含むEdition、Runtime、Store、Studioに関する情報は、公開条件と技術資料が整ったものからこのページで案内します。現時点ではダウンロード、対応環境、リリース情報は準備中です。", principles: [{ label: "KUB", text: "HeraixOS Kubの情報を準備。" }, { label: "PLATFORM", text: "Runtime・Store・Studioを構想。" }, { label: "DOCUMENTS", text: "技術資料は公開準備中。" }] },
+  "/products/heraix-igrac": { section: "PRODUCTS", code: "03.2", trail: "PRODUCTS / HERAIX IGRAC", title: "Create. Play.\nPublish.", english: "HERAIX IGRAC", status: "FUTURE PLAN", lead: "Heraix IGRACは、ゲームとデジタルコンテンツをCreate / Play / Publishするためのプラットフォーム構想です。", body: "作品をつくる人、遊ぶ人、公開する人の接点を整え、創作が継続するための仕組みを研究します。仕様、利用方法、提供時期は確定していません。", principles: [{ label: "CREATE", text: "つくるための環境を構想。" }, { label: "PLAY", text: "遊びと表現をつなぐ。" }, { label: "PUBLISH", text: "公開と継続の仕組みを研究。" }] },
+  "/products/heraklion": { section: "PRODUCTS", code: "03.3", trail: "PRODUCTS / HERAKLION", title: "Heraklion\nIntelligence", english: "HERAKLION", status: "FUTURE PLAN", lead: "Heraklionは、AI / LLMとマルチエージェントの可能性を探る研究開発プロジェクトです。", body: "HQ、Planner、Executor、Reviewerのような役割が循環する知性の構造を研究します。一般提供するAIサービス、API、モデル仕様は現在公開していません。", principles: [{ label: "HQ", text: "全体の目的と判断を整える。" }, { label: "AGENTS", text: "役割を持つ知性の循環を研究。" }, { label: "RESEARCH", text: "公開可能な成果を段階的に記録。" }] },
   "/technology": {
     section: "TECHNOLOGY", code: "04", trail: "SQAHIA DIGITAL / TECHNOLOGY", title: "技術を、\n未来の資産にする。", english: "TECHNOLOGY", status: "FUTURE PLAN",
     lead: "技術を単発の制作に消費せず、継続して事業を支える資産として育てる構想です。",
     body: "将来の技術活動は、ソフトウェア、開発支援、API、研究を横断します。公開する技術情報、開発者向け資料、研究成果は、事実と公開条件が整ったものから掲載します。",
     principles: [{ label: "BUILD", text: "体験を成立させる技術をつくる。" }, { label: "LEARN", text: "研究と検証を通じて学ぶ。" }, { label: "COMPOUND", text: "技術資産を次の価値へつなぐ。" }], children: technologyChildren,
   },
-  "/technology/technology": { section: "TECHNOLOGY", code: "04.1", trail: "TECHNOLOGY / TECHNOLOGY", title: "Technology\nPerspective", english: "TECHNOLOGY", status: "PREPARING", lead: "SQAHIA Digitalが扱う技術観点を公開するページです。", body: "現在、外部へ公開できる具体的な技術仕様や実装情報はありません。公開の準備が整った技術領域から、目的、設計方針、利用条件を明らかにします。", principles: [{ label: "STATUS", text: "技術情報は公開準備中。" }, { label: "SCOPE", text: "体験と事業を支える技術。" }, { label: "POLICY", text: "公開条件を整えたものから発信。" }] },
-  "/technology/software": { section: "TECHNOLOGY", code: "04.2", trail: "TECHNOLOGY / SOFTWARE", title: "Software\nEngineering", english: "SOFTWARE ENGINEERING", status: "PREPARING", lead: "ソフトウェア開発の考え方と、将来の技術資料を掲載するページです。", body: "プロダクト、開発ツール、システム基盤のそれぞれにおいて、目的と保守性を両立する設計を目指します。具体的な技術スタック・公開資料は準備中です。", principles: [{ label: "CLARITY", text: "目的を明快にする設計。" }, { label: "MAINTAIN", text: "続けられる仕組みを残す。" }, { label: "DOCUMENT", text: "公開資料は準備中。" }] },
-  "/technology/api": { section: "TECHNOLOGY", code: "04.3", trail: "TECHNOLOGY / API", title: "API\nInterface", english: "API", status: "PREPARING", lead: "将来の開発者向けAPIに関する公式情報ページです。", body: "現在、一般公開中のAPI、SDK、開発者ポータルはありません。公開を行う場合には、仕様、認証、利用規約、変更履歴、サポート範囲を公式にお知らせします。", principles: [{ label: "AVAILABILITY", text: "公開APIはありません。" }, { label: "DOCUMENTATION", text: "公式ドキュメントを準備予定。" }, { label: "CHANGELOG", text: "公開時に変更管理を開始。" }] },
-  "/technology/research": { section: "TECHNOLOGY", code: "04.4", trail: "TECHNOLOGY / RESEARCH", title: "Research\nRecord", english: "RESEARCH", status: "FUTURE PLAN", lead: "技術と新しいデジタル体験の可能性を検証する研究領域です。", body: "SPDEを含む将来の研究活動では、技術的な実現性、市場との接点、継続可能性を段階的に検証します。公開可能な研究テーマ・成果が確定した時点で、記録として掲載します。", principles: [{ label: "QUESTION", text: "まだ解かれていない課題を探す。" }, { label: "PROTOTYPE", text: "小さく試し、学びを残す。" }, { label: "RELEASE", text: "公開可能な成果を記録する。" }] },
+  "/technology/heraix-api": { section: "TECHNOLOGY", code: "04.1", trail: "TECHNOLOGY / HERAIX API", title: "Heraix API\nInterface", english: "HERAIX API", status: "PREPARING", lead: "Heraix APIは、将来のプロダクトと外部開発者を接続するための技術基盤です。", body: "現在、一般公開中のAPI、SDK、開発者ポータルはありません。公開を行う際は、仕様、認証、変更履歴、サポート範囲を公式に案内します。", principles: [{ label: "INTERFACE", text: "プロダクトを接続する設計。" }, { label: "DOCUMENTATION", text: "公式資料を準備予定。" }, { label: "CHANGELOG", text: "公開時に変更管理を開始。" }] },
+  "/technology/runtime": { section: "TECHNOLOGY", code: "04.2", trail: "TECHNOLOGY / RUNTIME", title: "Runtime\nFoundation", english: "RUNTIME", status: "PREPARING", lead: "Runtimeは、プロダクトと作品を動かすための実行基盤に関する研究領域です。", body: "IGR Runtime、NativeBridge、Package Systemなどを含む技術構成は、公開条件が整った内容から記録します。現時点で仕様や利用条件は公開していません。", principles: [{ label: "EXECUTE", text: "作品を動かす実行環境。" }, { label: "BRIDGE", text: "異なる技術を接続する構想。" }, { label: "PACKAGE", text: "配布と更新の仕組みを研究。" }] },
+  "/technology/platform": { section: "TECHNOLOGY", code: "04.3", trail: "TECHNOLOGY / PLATFORM", title: "Platform\nSystem", english: "PLATFORM", status: "PREPARING", lead: "OS、Store、Studio、Runtimeをつなぐプラットフォーム構成を研究します。", body: "HeraixOSを核として、制作・配布・実行の各段階がつながる構成を目指します。実装状況、利用可能な機能、提供時期は準備中です。", principles: [{ label: "OS", text: "コンピューティング環境の基盤。" }, { label: "STUDIO", text: "制作を支える場を構想。" }, { label: "STORE", text: "公開と配布の接点を設計。" }] },
+  "/technology/engineering": { section: "TECHNOLOGY", code: "04.4", trail: "TECHNOLOGY / ENGINEERING", title: "How We\nBuild", english: "ENGINEERING", status: "PREPARING", lead: "SQAHIA Digitalは、つくるだけでなく、検証し、改善し、記録する開発文化を目指します。", body: "C / C++、CMake、Ninja、SDL3、Dear ImGui、Wayland、Limineなどの技術は、採用・公開が確定したものから扱います。現時点での技術スタックを断定するものではありません。", principles: [{ label: "BUILD", text: "目的から実装を組み立てる。" }, { label: "TEST", text: "品質は検証によってつくる。" }, { label: "IMPROVE", text: "記録を次の改善につなぐ。" }] },
+  "/business/ai": { section: "BUSINESS", code: "02.2", trail: "BUSINESS / AI & INTELLIGENCE", title: "知性を、\nつくる側へ。", english: "AI & INTELLIGENCE", status: "FUTURE PLAN", lead: "AI、LLM、AIエージェントを、自社の創作と技術を支える研究領域として育てます。", body: "Heraklionを含む研究開発を通じて、計画、実行、検証が協働する知性の構造を探ります。現時点で一般提供するAIサービスはありません。", principles: [{ label: "LLM", text: "言語モデルの可能性を研究。" }, { label: "AGENTS", text: "役割を持つ知性の連携。" }, { label: "HERAKLION", text: "研究開発プロジェクト。" }] },
+  "/business/gaming-entertainment": { section: "BUSINESS", code: "02.3", trail: "BUSINESS / GAMING & ENTERTAINMENT", title: "遊びを、\nエコシステムに。", english: "GAMING & ENTERTAINMENT", status: "CURRENT", lead: "Project：TBLとHeraix IGRAC構想を起点に、参加者が想像と表現を広げられる体験をつくります。", body: "ゲーム、ストーリーメーカー、デジタルコンテンツを通じて、つくること・遊ぶこと・公開することがつながる場を研究します。提供形態や具体的なプロダクト仕様は、確定したものから公開します。", principles: [{ label: "TBL", text: "公開中のストーリーメーカー構想。" }, { label: "IGRAC", text: "Create / Play / Publishを研究。" }, { label: "CONTENT", text: "表現と参加をつなぐ。" }], projectHighlight: { title: "Project：TBL", english: "PUBLIC PROJECT / 01", status: "公開", body: "Project：TBLは、SQAHIA Digitalの公開プロジェクトです。詳細なストーリー・メンバー・公開記録はTBL Forumで順次更新します。" } },
+  "/business/digital-platform": { section: "BUSINESS", code: "02.4", trail: "BUSINESS / DIGITAL PLATFORM", title: "技術と作品を、\nつなぐ場へ。", english: "DIGITAL PLATFORM", status: "FUTURE PLAN", lead: "プロダクト、コミュニティー、Runtime、Storeを接続するデジタルプラットフォームを構想しています。", body: "自社の技術と創作が循環し、利用者やクリエイターが参加できるための基盤を段階的に研究します。具体的なサービス仕様は未確定です。", principles: [{ label: "CONNECT", text: "作品と技術を接続。" }, { label: "COMMUNITY", text: "参加と創作の場を研究。" }, { label: "SCALE", text: "継続可能な基盤を設計。" }] },
+  "/business/research-development": { section: "BUSINESS", code: "02.5", trail: "BUSINESS / R&D", title: "研究を、\n次の製品へ。", english: "RESEARCH & DEVELOPMENT", status: "PREPARING", lead: "研究開発は、まだない技術と体験の可能性を試し、次のプロダクトへつなげる領域です。", body: "HeraixOS、Heraix IGRAC、Heraklion、ClassicDOSなどの構想・実験を、公開可能な事実と将来計画に分けながら記録します。", principles: [{ label: "QUESTION", text: "次の問いを見つける。" }, { label: "PROTOTYPE", text: "小さく試し、学びを残す。" }, { label: "ARCHIVE", text: "実験の歴史を記録する。" }] },
+  "/research": { section: "RESEARCH", code: "05", trail: "SQAHIA DIGITAL / RESEARCH", title: "研究から、\n新しい基盤を。", english: "RESEARCH & DEVELOPMENT", status: "PREPARING", lead: "SQAHIA Digitalの研究開発プロジェクトと、公開可能な検証記録を整理するページです。", body: "HeraixOS、Heraix IGRAC、Heraklion、ClassicDOSなどのテーマは、それぞれ公開状況が異なります。Active、Experimental、Archivedの記録方式は準備中です。", principles: [{ label: "ACTIVE", text: "進行中のテーマを準備中表示。" }, { label: "EXPERIMENTAL", text: "試作・検証の記録を整備。" }, { label: "ARCHIVED", text: "過去の挑戦も技術史として残す。" }] },
+  "/qa-security": { section: "QA & SECURITY", code: "06", trail: "SQAHIA DIGITAL / QA & SECURITY", title: "品質は、\nつくるもの。", english: "QA & SECURITY", status: "PREPARING", lead: "SQAHIA Digitalは、品質を前提ではなく、設計・検証・記録によって育てるものとして扱います。", body: "QA Reports、Inspection Reports、Release Notes、Known Issues、Security Advisoriesなどの公開方式を整備します。現時点で公開可能な報告書やセキュリティ告知はありません。", principles: [{ label: "QA", text: "検証可能な品質を設計。" }, { label: "SECURITY", text: "方針と連絡経路を準備。" }, { label: "RECORD", text: "公開できる事実を記録。" }], children: qaChildren },
+  "/qa-security/qa-reports": { section: "QA & SECURITY", code: "06.1", trail: "QA & SECURITY / QA REPORTS", title: "QA\nReports", english: "QA REPORTS", status: "PREPARING", lead: "公開可能な品質保証・検証記録を掲載するページです。", body: "Build Information、Compatibility Matrix、Inspection Reportsなどを、公開条件が整ったものから掲載します。現時点で公開可能なレポートはありません。", principles: [{ label: "BUILD", text: "ビルド情報を記録。" }, { label: "TEST", text: "検証記録を整理。" }, { label: "COMPATIBILITY", text: "対応状況を公開予定。" }] },
+  "/qa-security/security": { section: "QA & SECURITY", code: "06.2", trail: "QA & SECURITY / SECURITY", title: "Security\nPolicy", english: "SECURITY", status: "PREPARING", lead: "セキュリティ方針と脆弱性報告の受付方法を整備するページです。", body: "Supported Versions、Vulnerability Disclosure、Security Teamへの連絡方法は、体制と公開条件が整った時点で公式に案内します。", principles: [{ label: "POLICY", text: "方針を準備中。" }, { label: "DISCLOSURE", text: "報告方法を整備予定。" }, { label: "ADVISORIES", text: "将来の告知を記録。" }] },
+  "/qa-security/advisories": { section: "QA & SECURITY", code: "06.3", trail: "QA & SECURITY / ADVISORIES", title: "Security\nAdvisories", english: "SECURITY ADVISORIES", status: "PREPARING", lead: "将来のセキュリティ告知アーカイブです。", body: "現在、公開中のセキュリティアドバイザリーはありません。製品と体制の公開状況に応じて、正確な告知と対応情報を掲載します。", principles: [{ label: "CURRENT", text: "公開中の告知はありません。" }, { label: "ARCHIVE", text: "告知履歴を残す。" }, { label: "RESPONSE", text: "対応情報を明確にする。" }] },
+  "/downloads": { section: "DOWNLOADS", code: "07", trail: "SQAHIA DIGITAL / DOWNLOADS", title: "配布を、\n正確な情報から。", english: "DOWNLOADS", status: "PREPARING", lead: "SQAHIA Digitalの製品ダウンロードとリリース情報を集約するページです。", body: "HeraixOS Kubなどの配布を行う場合は、Latest Release、Previous Releases、SHA-256、ISO Size、System Requirements、Release Notesを公式情報として掲載します。現在、公開可能なダウンロードはありません。", principles: [{ label: "RELEASES", text: "公開リリースは準備中。" }, { label: "INTEGRITY", text: "ハッシュ情報を掲載予定。" }, { label: "SUPPORT", text: "対応環境と注意事項を明記。" }] },
+  "/technology-map": { section: "ECOSYSTEM", code: "08", trail: "SQAHIA DIGITAL / TECHNOLOGY MAP", title: "技術と製品を、\nひとつの地図に。", english: "SQAHIA DIGITAL ECOSYSTEM", status: "FUTURE PLAN", lead: "SQAHIA Digitalの事業、技術、製品がどのようにつながるかを示すエコシステムマップです。", body: "Software、AI、Entertainmentの各領域から、HeraixOS、Heraklion、Heraix IGRACへ接続し、Kub、API、Runtime、Store、Studioなどの構想へ広げます。各要素の公開状況は異なります。", principles: [{ label: "SOFTWARE", text: "HeraixOS / Kub / API / Runtime。" }, { label: "AI", text: "Heraklion / LLM / Agents。" }, { label: "ENTERTAINMENT", text: "IGRAC / Gaming / TBL。" }] },
   "/projects": { section: "PROJECTS", code: "05", trail: "SQAHIA DIGITAL / PROJECTS", title: "プロジェクトを、\n記録として残す。", english: "PROJECTS", status: "PREPARING", lead: "SQAHIA Digitalのプロジェクトアーカイブを準備しています。", body: "現在、公開できるプロジェクト事例はありません。自社プロダクト、研究、協業など、公開の許諾と情報整理が完了したものから、目的、プロセス、成果を記録します。", principles: [{ label: "CASE STUDIES", text: "公開事例を準備中。" }, { label: "PROCESS", text: "背景と設計の判断を記録。" }, { label: "CREDITS", text: "関係者と権利を正確に表記。" }] },
   "/news": { section: "NEWS", code: "06", trail: "SQAHIA DIGITAL / NEWS", title: "変化を、\n正式に知らせる。", english: "NEWS", status: "PREPARING", lead: "SQAHIA Digitalの公式ニュースアーカイブを準備しています。", body: "会社情報、製品公開、研究発表、採用、イベントなどの確定情報は、このページで時系列にお知らせします。現在、公開できるニュースはありません。", principles: [{ label: "OFFICIAL", text: "確定情報の一次発信。" }, { label: "ARCHIVE", text: "発表の履歴を保存。" }, { label: "UPDATE", text: "公開時に順次掲載。" }] },
   "/careers": { section: "CAREERS", code: "07", trail: "SQAHIA DIGITAL / CAREERS", title: "次の体験を、\n一緒につくる。", english: "CAREERS", status: "PREPARING", lead: "SQAHIA Digitalは、エンターテイメントを中心に、ソフトウェア開発とSPDEのためのデータ収集にも取り組んでいます。現在は、最初の仲間を迎えるための準備期間です。", body: "公開中の募集職種・採用条件はまだありません。未熟さと無邪気さを大切にしながら、面白いと思う方向へ試し、作品と技術を育てる人を迎えられる体制を整えています。募集開始後は、①募集内容の公開、②応募、③作品や考えを聞く対話、④お互いの判断、という順で参加を進めます。役割、働き方、選考の流れ、応募条件はこのページで正式に案内します。", principles: [{ label: "WHO", text: "面白いを起点に、まず試せる人。" }, { label: "HOW", text: "未熟さを学びに、無邪気さを行動に変える。" }, { label: "WHEN", text: "体制と募集条件が整い次第、公開。" }], note: "現在は募集準備中です。採用開始前の個別応募・書類受付は行っていません。" },
@@ -193,7 +211,7 @@ const pages: Record<string, PageData> = {
 };
 
 const topLinks = [
-  ["ABOUT", "/about"], ["BUSINESS", "/business"], ["PRODUCTS", "/products"], ["TECHNOLOGY", "/technology"], ["PROJECTS", "/projects"], ["NEWS", "/news"], ["CAREERS", "/careers"],
+  ["ABOUT", "/about"], ["BUSINESS", "/business"], ["PRODUCTS", "/products"], ["TECH", "/technology"], ["RESEARCH", "/research"], ["QA", "/qa-security"], ["DOWNLOADS", "/downloads"],
 ];
 
 export default function CorporatePage() {
@@ -247,7 +265,7 @@ export default function CorporatePage() {
         </section>
       </main>
 
-      <footer className="border-t border-[#121416]/15 bg-[#121416] px-5 py-7 text-white/60 sm:px-8 lg:px-10"><div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3 text-white"><img src="/manus-storage/sqahia-logo-official_8e289d78.png" alt="" className="official-logo h-9 w-9" /><p className="brand-lockup font-display text-sm font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-white/55">DIGITAL</span></p></div><p className="mt-3 font-mono text-[9px] tracking-[0.09em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p></div><div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] tracking-[0.08em]"><a href="/about">ABOUT</a><a href="/business">BUSINESS</a><a href="/products">PRODUCTS</a><a href="/technology">TECHNOLOGY</a><a href="/forum">INVESTOR FORUM</a><a href="/contact">CONTACT</a></div></div></footer>
+      <footer className="border-t border-[#121416]/15 bg-[#121416] px-5 py-7 text-white/60 sm:px-8 lg:px-10"><div className="mx-auto flex max-w-[1520px] flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><div className="flex items-center gap-3 text-white"><img src="/manus-storage/sqahia-logo-official_8e289d78.png" alt="" className="official-logo h-9 w-9" /><p className="brand-lockup font-display text-sm font-bold tracking-[-0.05em]">SQAHIA <span className="font-mono text-[8px] font-medium tracking-[0.18em] text-white/55">DIGITAL</span></p></div><p className="mt-3 font-mono text-[9px] tracking-[0.09em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p></div><div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[9px] tracking-[0.08em]"><a href="/about">ABOUT</a><a href="/business">BUSINESS</a><a href="/products">PRODUCTS</a><a href="/technology">TECH</a><a href="/research">RESEARCH</a><a href="/qa-security">QA</a><a href="/downloads">DOWNLOADS</a><a href="/technology-map">MAP</a><a href="/contact">CONTACT</a></div></div></footer>
     </div>
   );
 }

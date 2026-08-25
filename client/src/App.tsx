@@ -21,6 +21,10 @@ function Router() {
       <Route path="/business" component={CorporatePage} />
       <Route path="/products" component={CorporatePage} />
       <Route path="/technology" component={CorporatePage} />
+      <Route path="/research" component={CorporatePage} />
+      <Route path="/qa-security" component={CorporatePage} />
+      <Route path="/downloads" component={CorporatePage} />
+      <Route path="/technology-map" component={CorporatePage} />
       <Route path="/projects" component={CorporatePage} />
       <Route path="/news" component={CorporatePage} />
       <Route path="/careers" component={CorporatePage} />
