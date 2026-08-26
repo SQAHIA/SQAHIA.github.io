@@ -26,4 +26,10 @@ describe("product enterprise page tree", () => {
       expect(homeSource).toContain(term);
     });
   });
+
+  it("publishes interim security guidance and clear product-record modules", () => {
+    ["暫定セキュリティポリシー", "責任ある開示", "セキュリティに関する連絡を送る", "Heraklion / 研究アーキテクチャ", "HeraixOS Kub / 公開情報", "DOWNLOADSの公開状況を見る"].forEach((term) => {
+      expect(corporateSource).toContain(term);
+    });
+  });
 });
