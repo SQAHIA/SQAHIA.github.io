@@ -25,6 +25,18 @@ function Router() {
       <Route path="/qa-security" component={CorporatePage} />
       <Route path="/downloads" component={CorporatePage} />
       <Route path="/technology-map" component={CorporatePage} />
+      <Route path="/privacy" component={CorporatePage} />
+      <Route path="/terms" component={CorporatePage} />
+      <Route path="/support" component={CorporatePage} />
+      <Route path="/releases" component={CorporatePage} />
+      <Route path="/developers" component={CorporatePage} />
+      <Route path="/press" component={CorporatePage} />
+      <Route path="/accessibility" component={CorporatePage} />
+      <Route path="/sitemap" component={CorporatePage} />
+      <Route path="/news/archive" component={CorporatePage} />
+      <Route path="/products/heraixos/kub" component={CorporatePage} />
+      <Route path="/forum/tbl/guidelines" component={CorporatePage} />
+      <Route path="/forum/tbl/characters" component={CorporatePage} />
       <Route path="/projects" component={CorporatePage} />
       <Route path="/news" component={CorporatePage} />
       <Route path="/careers" component={CorporatePage} />

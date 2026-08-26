@@ -32,4 +32,22 @@ describe("product enterprise page tree", () => {
       expect(corporateSource).toContain(term);
     });
   });
+
+  it("includes the approved operational, project, and support page records", () => {
+    ["/privacy", "/terms", "/support", "/releases", "/developers", "/press", "/accessibility", "/sitemap", "/projects/languagehaven", "/forum/tbl/guidelines", "/news/archive-setup"].forEach((route) => {
+      expect(appSource + corporateSource).toContain(route);
+    });
+  });
+
+  it("connects the news overview to an archive and a non-fabricated detail record", () => {
+    ["title: \"News Archive\", href: \"/news/archive\"", "title: \"News Archive Setup\", href: \"/news/archive-setup\"", "SITE UPDATE / 2026-08-26"].forEach((term) => {
+      expect(corporateSource).toContain(term);
+    });
+  });
+
+  it("keeps the public inquiry CTA available for privacy and security records", () => {
+    ["https://forms.cloud.microsoft/r/TeYnafGRUr", "/privacy", "/qa-security", "/security/reporting", "target=\"_blank\""].forEach((term) => {
+      expect(corporateSource).toContain(term);
+    });
+  });
 });

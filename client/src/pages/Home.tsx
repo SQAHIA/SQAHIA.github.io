@@ -274,7 +274,7 @@ export default function Home() {
 
       <footer className="flex flex-col justify-between gap-4 bg-[#121416] px-5 py-5 text-white/55 sm:flex-row sm:px-8 lg:px-12">
         <p className="font-mono text-[9px] tracking-[0.11em]">© {new Date().getFullYear()} SQAHIA DIGITAL</p>
-        <div className="flex flex-wrap gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/technology-map">TECHNOLOGY MAP</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/forum">INVESTOR FORUM</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
+        <div className="flex flex-wrap gap-5"><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/technology-map">TECHNOLOGY MAP</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/support">SUPPORT</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/privacy">PRIVACY</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/sitemap">SITEMAP</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="/forum">INVESTOR FORUM</a><a className="font-mono text-[9px] tracking-[0.11em] transition-colors hover:text-white" href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </div>
   );
