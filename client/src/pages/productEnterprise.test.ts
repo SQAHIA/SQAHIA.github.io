@@ -27,6 +27,13 @@ describe("product enterprise page tree", () => {
     });
   });
 
+  it("keeps the revised homepage headline valid and singularly styled", () => {
+    expect(homeSource).toContain('新たなエンタメ</span><br />');
+    expect(homeSource).toContain('を作り出す');
+    expect(homeSource).toContain('text-[clamp(3.45rem,8.3vw,131px)]');
+    expect(homeSource).not.toMatch(/style=\{\{[^}]*\}\}\s*style=/);
+  });
+
   it("publishes interim security guidance and clear product-record modules", () => {
     ["暫定セキュリティポリシー", "責任ある開示", "セキュリティに関する連絡を送る", "Heraklion / 研究アーキテクチャ", "HeraixOS Kub / 公開情報", "DOWNLOADSの公開状況を見る"].forEach((term) => {
       expect(corporateSource).toContain(term);

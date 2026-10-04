@@ -139,9 +139,9 @@ export default function Home() {
                 <span className="block h-2.5 w-2.5 rounded-full bg-[#1748e8]" />
                 <p className="font-mono text-[10px] font-medium tracking-[0.17em] text-[#121416]/65 sm:text-[11px]">DIGITAL ENTERTAINMENT &amp; TECHNOLOGY / JAPAN</p>
               </motion.div>
-              <motion.h1 variants={fadeUp} className="font-display text-[clamp(3.45rem,8.3vw,8.4rem)] font-bold leading-[0.88] tracking-[-0.075em] text-[#121416]">
-                <span className="text-[#1748e8]">新たなエンタメ</span>と<br />
-                技術を作り出す
+              <motion.h1 variants={fadeUp} className="font-display text-[clamp(3.45rem,8.3vw,131px)] font-bold leading-[0.88] tracking-[-0.075em] text-[#121416]">
+                <span className="text-[#1748e8]">新たなエンタメ</span><br />
+                を作り出す
               </motion.h1>
               <motion.div variants={fadeUp} className="mt-8 grid max-w-xl gap-6 sm:grid-cols-[1fr_auto] sm:items-end">
                 <p className="max-w-[360px] text-[14px] leading-7 text-[#121416]/74 sm:text-[15px]">
