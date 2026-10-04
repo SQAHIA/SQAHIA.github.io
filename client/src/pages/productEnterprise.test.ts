@@ -41,8 +41,14 @@ describe("product enterprise page tree", () => {
   });
 
   it("includes the approved operational, project, and support page records", () => {
-    ["/privacy", "/terms", "/support", "/releases", "/developers", "/press", "/accessibility", "/sitemap", "/projects/languagehaven", "/forum/tbl/guidelines", "/news/archive-setup"].forEach((route) => {
+    ["/privacy", "/terms", "/support", "/releases", "/developers", "/press", "/accessibility", "/sitemap", "/projects/languagehaven", "/garage", "/forum/tbl/guidelines", "/news/archive-setup"].forEach((route) => {
       expect(appSource + corporateSource).toContain(route);
+    });
+  });
+
+  it("documents the Garage system and links the third-party participation form", () => {
+    ["GARAGE SYSTEM / THIRD-PARTY GARAGE", "Garage制度", "試す", "作る", "検証する", "撤退する", "サードパーティーガレージへ参加申請する", "https://forms.cloud.microsoft/r/TeYnafGRUr"].forEach((term) => {
+      expect(corporateSource).toContain(term);
     });
   });
 

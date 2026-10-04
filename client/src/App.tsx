@@ -38,6 +38,7 @@ function Router() {
       <Route path="/forum/tbl/guidelines" component={CorporatePage} />
       <Route path="/forum/tbl/characters" component={CorporatePage} />
       <Route path="/projects" component={CorporatePage} />
+      <Route path="/garage" component={CorporatePage} />
       <Route path="/news" component={CorporatePage} />
       <Route path="/careers" component={CorporatePage} />
       <Route path="/contact" component={CorporatePage} />
