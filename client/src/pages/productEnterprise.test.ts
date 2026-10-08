@@ -7,6 +7,7 @@ const projectRoot = process.cwd();
 const appSource = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8");
 const corporateSource = readFileSync(resolve(projectRoot, "client/src/pages/CorporatePage.tsx"), "utf8");
 const homeSource = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
+const viteConfigSource = readFileSync(resolve(projectRoot, "vite.config.ts"), "utf8");
 
 describe("product enterprise page tree", () => {
   it("registers primary product-enterprise routes", () => {
@@ -50,6 +51,12 @@ describe("product enterprise page tree", () => {
     ["GARAGE SYSTEM / THIRD-PARTY GARAGE", "Garage制度", "試す", "作る", "検証する", "撤退する", "サードパーティーガレージへ参加申請する", "https://forms.cloud.microsoft/r/TeYnafGRUr"].forEach((term) => {
       expect(corporateSource).toContain(term);
     });
+  });
+
+  it("keeps public preview HMR on the HTTPS WebSocket endpoint", () => {
+    expect(viteConfigSource).toContain('protocol: "wss"');
+    expect(viteConfigSource).toContain("clientPort: 443");
+    expect(viteConfigSource).toContain("strictPort: true");
   });
 
   it("connects the news overview to an archive and a non-fabricated detail record", () => {

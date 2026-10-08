@@ -222,7 +222,11 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
+    strictPort: true,
+    ws: {
+      protocol: "wss",
+      clientPort: 443,
+    },
     host: true,
     allowedHosts: [
       ".manuspre.computer",
