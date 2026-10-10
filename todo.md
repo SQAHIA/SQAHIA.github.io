@@ -173,3 +173,10 @@
 - [x] Vite WebSocketをwss、クライアントポート443、固定ポート3000へ設定する。
 - [x] ブラウザコンソールでWebSocketエラーが再発していないことを確認する。
 - [x] HMR設定の回帰テスト、型チェック、本番ビルドを完了する。
+
+## Project:MateMatika研究アーカイブ
+
+- [x] /researchにProject:MateMatikaのアーカイブ記録を追加する。
+- [x] Project:MateMatikaの隣に「開発中止」ログを表示する。
+- [x] MMka_5_SEP_large_minimal_update.zipへのアーカイブ導線を追加する。
+- [ ] GitHub Pages公開後のアーカイブURLと研究ページ表示を確認する。

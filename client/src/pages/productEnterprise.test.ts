@@ -41,6 +41,12 @@ describe("product enterprise page tree", () => {
     });
   });
 
+  it("keeps the MateMatika archive and stopped-development log adjacent on research", () => {
+    ["Project:MateMatika", "開発中止", "MMka_5_SEP_large_minimal_update.zip", "DEVELOPMENT STOPPED", "RESEARCH ARCHIVE / PROJECT LOGS"].forEach((term) => {
+      expect(corporateSource).toContain(term);
+    });
+  });
+
   it("includes the approved operational, project, and support page records", () => {
     ["/privacy", "/terms", "/support", "/releases", "/developers", "/press", "/accessibility", "/sitemap", "/projects/languagehaven", "/garage", "/forum/tbl/guidelines", "/news/archive-setup"].forEach((route) => {
       expect(appSource + corporateSource).toContain(route);
