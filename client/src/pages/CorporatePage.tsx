@@ -259,7 +259,8 @@ const topLinks = [
 ];
 
 export default function CorporatePage() {
-  const [location] = useLocation();
+  const [rawLocation] = useLocation();
+  const location = rawLocation.replace(/\/+$/, "") || "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const page = pages[location] ?? pages["/about"];
   const isContactPage = location === "/contact" || location.startsWith("/contact/");

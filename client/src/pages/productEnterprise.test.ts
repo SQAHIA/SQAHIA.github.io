@@ -91,4 +91,8 @@ describe("product enterprise page tree", () => {
     expect(corporateSource).toContain("commonTermsMarkdown");
     expect(corporateSource).toContain("status: \"CURRENT\"");
   });
+
+  it("normalizes trailing slashes so /terms/ does not fall back to About", () => {
+    expect(corporateSource).toContain('const location = rawLocation.replace(/\\/+$/, "") || "/";');
+  });
 });
