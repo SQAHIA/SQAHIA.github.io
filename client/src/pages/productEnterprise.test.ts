@@ -8,6 +8,7 @@ const appSource = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8
 const corporateSource = readFileSync(resolve(projectRoot, "client/src/pages/CorporatePage.tsx"), "utf8");
 const homeSource = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
 const viteConfigSource = readFileSync(resolve(projectRoot, "vite.config.ts"), "utf8");
+const termsSource = readFileSync(resolve(projectRoot, "client/src/content/terms.ts"), "utf8");
 
 describe("product enterprise page tree", () => {
   it("registers primary product-enterprise routes", () => {
@@ -65,6 +66,12 @@ describe("product enterprise page tree", () => {
     expect(viteConfigSource).toContain("strictPort: true");
   });
 
+  it("wraps route changes in a calm, reduced-motion-aware transition", () => {
+    expect(appSource).toContain("AnimatePresence");
+    expect(appSource).toContain("page-transition-shell");
+    expect(appSource).toContain("useReducedMotion");
+  });
+
   it("connects the news overview to an archive and a non-fabricated detail record", () => {
     ["title: \"News Archive\", href: \"/news/archive\"", "title: \"News Archive Setup\", href: \"/news/archive-setup\"", "SITE UPDATE / 2026-08-26"].forEach((term) => {
       expect(corporateSource).toContain(term);
@@ -75,5 +82,13 @@ describe("product enterprise page tree", () => {
     ["https://forms.cloud.microsoft/r/TeYnafGRUr", "/privacy", "/qa-security", "/security/reporting", "target=\"_blank\""].forEach((term) => {
       expect(corporateSource).toContain(term);
     });
+  });
+
+  it("publishes the attached common terms with IGRA-specific provisions", () => {
+    ["SQAHIA Digital 共通利用規約", "第5章　IGRAプラットフォーム特則", "第24条（分離可能性）", "制定日：2026年10月10日", "代表者："].forEach((term) => {
+      expect(termsSource).toContain(term);
+    });
+    expect(corporateSource).toContain("commonTermsMarkdown");
+    expect(corporateSource).toContain("status: \"CURRENT\"");
   });
 });

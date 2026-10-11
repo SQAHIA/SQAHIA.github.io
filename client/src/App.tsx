@@ -2,7 +2,8 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import CorporatePage from "./pages/CorporatePage";
@@ -49,11 +50,31 @@ function Router() {
   );
 }
 
+function AnimatedRouter() {
+  const [location] = useLocation();
+  const reduceMotion = useReducedMotion();
+
+  return (
+    <AnimatePresence mode="wait" initial={false}>
+      <motion.div
+        key={location}
+        className="page-transition-shell"
+        initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}
+        transition={reduceMotion ? { duration: 0 } : { duration: 0.32, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <Router />
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
 function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
-        <TooltipProvider><Toaster /><Router /></TooltipProvider>
+        <TooltipProvider><Toaster /><AnimatedRouter /></TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
