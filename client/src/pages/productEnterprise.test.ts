@@ -8,7 +8,9 @@ const appSource = readFileSync(resolve(projectRoot, "client/src/App.tsx"), "utf8
 const corporateSource = readFileSync(resolve(projectRoot, "client/src/pages/CorporatePage.tsx"), "utf8");
 const homeSource = readFileSync(resolve(projectRoot, "client/src/pages/Home.tsx"), "utf8");
 const viteConfigSource = readFileSync(resolve(projectRoot, "vite.config.ts"), "utf8");
+const indexCssSource = readFileSync(resolve(projectRoot, "client/src/index.css"), "utf8");
 const termsSource = readFileSync(resolve(projectRoot, "client/src/content/terms.ts"), "utf8");
+const privacySource = readFileSync(resolve(projectRoot, "client/src/content/privacy.ts"), "utf8");
 
 describe("product enterprise page tree", () => {
   it("registers primary product-enterprise routes", () => {
@@ -92,7 +94,21 @@ describe("product enterprise page tree", () => {
     expect(corporateSource).toContain("status: \"CURRENT\"");
   });
 
+  it("publishes the attached full privacy policy", () => {
+    ["SQAHIA Digital プライバシーポリシー", "第1条　基本方針", "第8条　個人情報の安全管理", "第14条　お問い合わせ窓口", "制定日：2026年10月10日"].forEach((term) => {
+      expect(privacySource).toContain(term);
+    });
+    expect(corporateSource).toContain("privacyPolicyMarkdown");
+    expect(corporateSource).toContain('english: "PRIVACY POLICY"');
+  });
+
   it("normalizes trailing slashes so /terms/ does not fall back to About", () => {
     expect(corporateSource).toContain('const location = rawLocation.replace(/\\/+$/, "") || "/";');
+  });
+
+  it("keeps page and button motion calm and accessible", () => {
+    expect(appSource).toContain("transition={reduceMotion ? { duration: 0 } : { duration: 0.32");
+    expect(indexCssSource).toContain("button:not(:disabled):active, a[href]:active");
+    expect(indexCssSource).toContain("prefers-reduced-motion: reduce");
   });
 });
