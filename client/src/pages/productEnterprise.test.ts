@@ -100,6 +100,7 @@ describe("product enterprise page tree", () => {
     });
     expect(corporateSource).toContain("privacyPolicyMarkdown");
     expect(corporateSource).toContain('english: "PRIVACY POLICY"');
+    expect(corporateSource).toContain("items: { title: string; bullets: string[] }[]");
   });
 
   it("normalizes trailing slashes so /terms/ does not fall back to About", () => {

@@ -347,6 +347,14 @@ function TermsDocumentView({ document }: { document: { kicker: string; title: st
         if (first.startsWith("# ")) return <h3 key={index} className="font-display text-3xl font-semibold tracking-[-0.055em]">{first.slice(2)}</h3>;
         if (first.startsWith("## ")) return <h4 key={index} className="mt-10 border-t border-[#121416]/15 pt-5 font-display text-2xl font-semibold tracking-[-0.045em]">{first.slice(3)}</h4>;
         if (first.startsWith("### ")) return <h5 key={index} className="mt-7 font-display text-xl font-semibold tracking-[-0.04em]">{first.slice(4)}</h5>;
+        if (lines.some((line) => /^\s+- /.test(line)) && lines.some((line) => /^\d+\. /.test(line))) {
+          const items: { title: string; bullets: string[] }[] = [];
+          lines.forEach((line) => {
+            if (/^\d+\. /.test(line)) items.push({ title: line.replace(/^\d+\. /, ""), bullets: [] });
+            else if (/^\s+- /.test(line) && items.length > 0) items[items.length - 1].bullets.push(line.trim().slice(2));
+          });
+          return <ol key={index} className="mt-4 list-decimal space-y-5 pl-5 text-[13px] leading-7 text-[#121416]/75">{items.map((item) => <li key={item.title}>{formatTermsInline(item.title)}{item.bullets.length > 0 && <ul className="mt-2 list-disc space-y-1 pl-5">{item.bullets.map((bullet) => <li key={bullet}>{formatTermsInline(bullet)}</li>)}</ul>}</li>)}</ol>;
+        }
         if (lines.every((line) => line.startsWith("- "))) return <ul key={index} className="mt-4 list-disc space-y-2 pl-5 text-[13px] leading-7 text-[#121416]/75">{lines.map((line) => <li key={line}>{formatTermsInline(line.slice(2))}</li>)}</ul>;
         if (lines.every((line) => /^\d+\. /.test(line))) return <ol key={index} className="mt-4 list-decimal space-y-2 pl-5 text-[13px] leading-7 text-[#121416]/75">{lines.map((line) => <li key={line}>{formatTermsInline(line.replace(/^\d+\. /, ""))}</li>)}</ol>;
         return <p key={index} className="mt-4 max-w-4xl text-[13px] leading-8 text-[#121416]/75">{formatTermsInline(lines.join(" "))}</p>;
