@@ -66,15 +66,20 @@
   body { @apply bg-background text-foreground font-sans; }
   a, button { -webkit-tap-highlight-color: transparent; }
   button:not(:disabled), a[href] { @apply cursor-pointer; }
+  :focus-visible { outline: 2px solid #1748e8; outline-offset: 4px; }
   ::selection { background: #1748e8; color: #fff; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .page-transition-shell { will-change: opacity, transform; }
   button:not(:disabled), a[href] {
     transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), color 180ms cubic-bezier(0.23, 1, 0.32, 1), background-color 180ms cubic-bezier(0.23, 1, 0.32, 1), border-color 180ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   button:not(:disabled):active, a[href]:active { transform: scale(0.98); }
-  a[href].inline-flex:hover { transform: translateY(-2px); }
+  @media (hover: hover) and (pointer: fine) {
+    a[href].inline-flex:hover { transform: translateY(-2px); }
+    .action-link:hover > svg, .corporate-contact-link:hover > svg { transform: translateX(3px); }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -94,6 +99,7 @@
   .action-link::after, .corporate-contact-link::after { content: ""; position: absolute; right: -18%; top: 0; height: 100%; width: 34%; background: rgb(255 255 255 / 0.19); transform: skewX(-30deg); transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1); }
   .action-link:hover::after, .corporate-contact-link:hover::after { transform: translateX(-210%) skewX(-30deg); }
   .action-link > *, .corporate-contact-link > * { position: relative; z-index: 1; }
+  .action-link > svg, .corporate-contact-link > svg { transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
   .bg-grain { background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.38'/%3E%3C/svg%3E"); background-size: 150px 150px; }
   .official-logo { border-radius: 10px; box-shadow: 0 5px 14px rgb(26 128 220 / 0.16); }
   .brand-lockup { position: relative; display: inline-flex; align-items: baseline; gap: 0.26rem; letter-spacing: -0.055em; }

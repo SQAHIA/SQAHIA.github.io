@@ -110,6 +110,9 @@ describe("product enterprise page tree", () => {
   it("keeps page and button motion calm and accessible", () => {
     expect(appSource).toContain("transition={reduceMotion ? { duration: 0 } : { duration: 0.32");
     expect(indexCssSource).toContain("button:not(:disabled):active, a[href]:active");
+    expect(indexCssSource).toContain(":focus-visible { outline: 2px solid #1748e8");
+    expect(indexCssSource).toContain("@media (hover: hover) and (pointer: fine)");
+    expect(indexCssSource).toContain(".action-link:hover > svg");
     expect(indexCssSource).toContain("prefers-reduced-motion: reduce");
   });
 });
